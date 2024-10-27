@@ -17,11 +17,6 @@
     "lit-elements",
     "web-component"
   ],
-  "files": [
-    "dist",
-    "src/",
-    "src/!docs"
-  ],
   "main": "./dist/dv-scalebar.lit.umd.cjs",
   "types": "./dist/scalebar.lit.d.ts",
   "exports": {
