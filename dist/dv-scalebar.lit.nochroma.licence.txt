@@ -125,10 +125,11 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 ---
 
 Name: dv-scalebar
-Version: 0.1.0
+Version: 0.1.1
 License: BSD-3-Clause
 Private: false
 Repository: git+https://github.com/indus/dv-scalebar
+Homepage: dv-scalebar.js.org
 Author: Stefan Keim (https://github.com/indus)
 License Copyright:
 ===
