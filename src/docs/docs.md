@@ -18,7 +18,7 @@ that exclude this dependency are available. This reduces its size significantly,
 to about `26kB (9kB gzip)` for the Lit version and `9kB (3kB gzip)` for the
 Vue version.
 
-## Intallation
+## Installation
 
 ```sh
 $ npm install dv-scalebar
@@ -108,3 +108,7 @@ intervalRandom(r => sb.value.colors = COLORS[r], COLORS.length, 700);
   <dv-scalebar v-bind="sb"></dv-scalebar>
 </template>
 ``` 
+
+
+## JSFiddle
+<iframe width="100%" height="300" src="//jsfiddle.net/ntewqy7a/embedded/html,result/dark/" frameborder="0" loading="lazy" allowtransparency="true" allowfullscreen="true"></iframe>
