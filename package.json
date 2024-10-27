@@ -1,0 +1,91 @@
+{
+  "name": "dv-scalebar",
+  "private": false,
+  "author": "Stefan Keim (https://github.com/indus)",
+  "license": "BSD-3-Clause",
+  "version": "0.1.0",
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/indus/dv-scalebar"
+  },
+  "keywords": [
+    "scalebar",
+    "vue3",
+    "vue",
+    "lit",
+    "lit-elements",
+    "web-component"
+  ],
+  "files": [
+    "dist",
+    "src/",
+    "src/!docs"
+  ],
+  "main": "./dist/dv-scalebar.lit.umd.cjs",
+  "types": "./dist/scalebar.lit.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/dv-scalebar.lit.js",
+      "require": "./dist/dv-scalebar.lit.umd.cjs",
+      "types": "./dist/scalebar.lit.d.ts"
+    },
+    "./lit": {
+      "import": "./dist/dv-scalebar.lit.js",
+      "require": "./dist/dv-scalebar.lit.umd.cjs",
+      "types": "./dist/scalebar.lit.d.ts"
+    },
+    "./lit.nochroma": {
+      "import": "./dist/dv-scalebar.lit.nochroma.js",
+      "require": "./dist/dv-scalebar.lit.nochroma.umd.cjs",
+      "types": "./dist/scalebar.lit.d.ts"
+    },
+    "./vue": {
+      "import": "./dist/dv-scalebar.vue.js",
+      "require": "./dist/dv-scalebar.vue.umd.cjs",
+      "types": "./dist/scalebar.vue.d.ts"
+    },
+    "./vue.nochroma": {
+      "import": "./dist/dv-scalebar.vue.nochroma.js",
+      "require": "./dist/dv-scalebar.vue.nochroma.umd.cjs",
+      "types": "./dist/scalebar.vue.d.ts"
+    },
+    "./sfc": {
+      "import": "./src/scalebar.vue"
+    },
+    "./style.css": {
+      "import": "./dist/style.css",
+      "require": "./dist/style.css"
+    }
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "vue-tsc -b && pnpm build:vue && pnpm build:lit",
+    "build:vue": "vite build && vite build -c vite.config.nochroma.ts",
+    "build:lit": "vite build -c vite.config.lit.ts && vite build -c vite.config.lit.nochroma.ts",
+    "preview": "vite preview",
+    "docs:dev": "vitepress dev src/docs",
+    "docs:build": "vitepress build src/docs",
+    "docs:preview": "vitepress preview src/docs"
+  },
+  "dependencies": {
+    "chroma-js": "^3.1.2",
+    "lit": "^3.2.1",
+    "vue": "^3.5.10"
+  },
+  "devDependencies": {
+    "@types/chroma-js": "^2.4.4",
+    "@types/node": "^22.7.5",
+    "@vitejs/plugin-vue": "^5.1.4",
+    "rollup-plugin-license": "^3.5.3",
+    "sass-embedded": "^1.80.1",
+    "typescript": "^5.5.3",
+    "vite": "^5.4.8",
+    "vite-plugin-dts": "^4.2.4",
+    "vitepress": "^1.4.1",
+    "vue-tsc": "^2.1.6"
+  },
+  "peerDependencies": {
+    "vue": "^3.0.0"
+  }
+}

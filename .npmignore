@@ -1,0 +1,5 @@
+docs
+src/docs
+vite.config*
+tsconfig*
+*.tsbuildinfo

@@ -1,0 +1,93 @@
+.VPHome {
+    .VPHero {
+        .text {
+            font-size: 38px;
+            line-height: 38px;
+        }
+
+        .action {
+            a[href$="lit"] {
+                background: url('/logo_lit.svg') no-repeat;
+            }
+    
+            a[href$="vue"] {
+                background: url('/logo_vue.svg') no-repeat;
+            }
+    
+            a[href$="vue"],
+            a[href$="lit"] {
+                height: 100%;
+                border-radius: 0;
+                background-size: contain;
+                background-position: center center;
+    
+                &:hover {
+                    background-color: transparent;
+                }
+            }
+        }
+    }
+
+    .VPFeatures {
+        h2 {
+            font-weight: 700;
+        }
+
+        strong {
+            font-weight: 700;
+            color: var(--vp-c-text-1);
+        }
+    }
+
+    .feature {
+        display: block;
+        border: 1px solid var(--vp-c-bg-soft);
+        border-radius: 12px;
+        height: 100%;
+        background-color: var(--vp-c-bg-soft);
+        transition: border-color 0.25s, background-color 0.25s;
+        padding: 3em 3em;
+        margin: 16px 0;
+
+        dv-scalebar,
+        .dv-sb {
+            --scalebar-size: 18;
+
+        }
+
+        .row .row dv-scalebar,
+        .row .row .dv-sb {
+            min-height: 300px;
+
+        }
+    }
+}
+
+img.fr {
+    float: right;
+    margin: 0 0 .5em 2em;
+}
+
+
+.row,
+.col {
+    display: flex;
+    flex-grow: 1;
+    gap: 50px;
+
+}
+
+.row {
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.col {
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.dv-sb.v {
+    min-height: 240px;
+}
