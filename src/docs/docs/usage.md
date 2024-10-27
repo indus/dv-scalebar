@@ -119,6 +119,4 @@ The scalebar can be enhanced with basic attributes such as [`colors`](/docs/colo
 
 ## More
 
-This was a brief overview of the four most common attributes. They will be explained in more detail on the following pages, along with additional layout and color attributes. Use the navigation on the left (the "menu" on mobile) to jump to a specific section.
-
-
+This was a brief overview of the four most commonly used attributes. They will be explained in more detail on the following pages, along with additional layout and color attributes. Use the navigation on the left (**Menu-Button** on mobile) to jump to a specific section.
