@@ -235,24 +235,24 @@ remain within the component’s container or apply suitable margins.
 
 ### _blend modes_
 
-<dv-scalebar class="tb tb_normal" colors="Viridis" ticks="5" labels="1,2,3,normal"/>
-<dv-scalebar class="tb tb_multiply" colors="Viridis" ticks="5" labels="1,2,3,multiply"/>
-<dv-scalebar class="tb tb_screen" colors="Viridis" ticks="5" labels="1,2,3,screen"/>
-<dv-scalebar class="tb tb_overlay" colors="Viridis" ticks="5" labels="1,2,3,overlay"/>
-<dv-scalebar class="tb tb_darken" colors="Viridis" ticks="5" labels="1,2,3,darken"/>
-<dv-scalebar class="tb tb_lighten" colors="Viridis" ticks="5" labels="1,2,3,lighten"/>
-<dv-scalebar class="tb tb_color-dodge" colors="Viridis" ticks="5" labels="1,2,3,color-dodge"/>
-<dv-scalebar class="tb tb_color-burn" colors="Viridis" ticks="5" labels="1,2,3,color-burn"/>
-<dv-scalebar class="tb tb_hard-light" colors="Viridis" ticks="5" labels="1,2,3,hard-light"/>
-<dv-scalebar class="tb tb_soft-light" colors="Viridis" ticks="5" labels="1,2,3,soft-light"/>
-<dv-scalebar class="tb tb_difference" colors="Viridis" ticks="5" labels="1,2,3,difference"/>
-<dv-scalebar class="tb tb_exclusion" colors="Viridis" ticks="5" labels="1,2,3,exclusion"/>
-<dv-scalebar class="tb tb_hue" colors="Viridis" ticks="5" labels="1,2,3,hue"/>
-<dv-scalebar class="tb tb_saturation" colors="Viridis" ticks="5" labels="1,2,3,saturation"/>
-<dv-scalebar class="tb tb_color" colors="Viridis" ticks="5" labels="1,2,3,color"/>
-<dv-scalebar class="tb tb_luminosity" colors="Viridis" ticks="5" labels="1,2,3,luminosity"/>
-<dv-scalebar class="tb tb_plus-darker" colors="Viridis" ticks="5" labels="1,2,3,plus-darker"/>
-<dv-scalebar class="tb tb_plus-lighter" colors="Viridis" ticks="5" labels="1,2,3,plus-lighter"/>
+<dv-scalebar class="bm bm_normal" colors="Viridis" ticks="5" labels="1,2,3,normal"/>
+<dv-scalebar class="bm bm_multiply" colors="Viridis" ticks="5" labels="1,2,3,multiply"/>
+<dv-scalebar class="bm bm_screen" colors="Viridis" ticks="5" labels="1,2,3,screen"/>
+<dv-scalebar class="bm bm_overlay" colors="Viridis" ticks="5" labels="1,2,3,overlay"/>
+<dv-scalebar class="bm bm_darken" colors="Viridis" ticks="5" labels="1,2,3,darken"/>
+<dv-scalebar class="bm bm_lighten" colors="Viridis" ticks="5" labels="1,2,3,lighten"/>
+<dv-scalebar class="bm bm_color-dodge" colors="Viridis" ticks="5" labels="1,2,3,color-dodge"/>
+<dv-scalebar class="bm bm_color-burn" colors="Viridis" ticks="5" labels="1,2,3,color-burn"/>
+<dv-scalebar class="bm bm_hard-light" colors="Viridis" ticks="5" labels="1,2,3,hard-light"/>
+<dv-scalebar class="bm bm_soft-light" colors="Viridis" ticks="5" labels="1,2,3,soft-light"/>
+<dv-scalebar class="bm bm_difference" colors="Viridis" ticks="5" labels="1,2,3,difference"/>
+<dv-scalebar class="bm bm_exclusion" colors="Viridis" ticks="5" labels="1,2,3,exclusion"/>
+<dv-scalebar class="bm bm_hue" colors="Viridis" ticks="5" labels="1,2,3,hue"/>
+<dv-scalebar class="bm bm_saturation" colors="Viridis" ticks="5" labels="1,2,3,saturation"/>
+<dv-scalebar class="bm bm_color" colors="Viridis" ticks="5" labels="1,2,3,color"/>
+<dv-scalebar class="bm bm_luminosity" colors="Viridis" ticks="5" labels="1,2,3,luminosity"/>
+<dv-scalebar class="bm bm_plus-darker" colors="Viridis" ticks="5" labels="1,2,3,plus-darker"/>
+<dv-scalebar class="bm bm_plus-lighter" colors="Viridis" ticks="5" labels="1,2,3,plus-lighter"/>
 
 <style>
 .bm {
