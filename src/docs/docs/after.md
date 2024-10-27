@@ -8,21 +8,23 @@ The attribute [`after`](/docs/after) accepts a single color string that adds a s
 ```html{4}
 <dv-scalebar ticks></dv-scalebar>
 <dv-scalebar after="hotpink" labels ticks="2"></dv-scalebar>
+<dv-scalebar after="hotpink" reverse labels ticks="2"></dv-scalebar>
 
 <dv-scalebar vertical ticks></dv-scalebar>
 <dv-scalebar after="hotpink" vertical labels ticks="2"></dv-scalebar>
+<dv-scalebar after="hotpink" reverse vertical labels ticks="2"></dv-scalebar>
 ```
 
 **Result**
 <div class="row">
 <div class="col">
-<dv-scalebar ticks></dv-scalebar>
-<dv-scalebar after="hotpink" labels ticks="2"></dv-scalebar>
-<dv-scalebar after="hotpink" reverse labels ticks="2"></dv-scalebar>
+<dv-scalebar ticks colors="#bbb,#444"></dv-scalebar>
+<dv-scalebar after="hotpink" labels ticks="2" colors="#bbb,#444"></dv-scalebar>
+<dv-scalebar after="hotpink" reverse labels ticks="2" colors="#bbb,#444"></dv-scalebar>
 </div>
 <div class="row">
-<dv-scalebar vertical ticks></dv-scalebar>
-<dv-scalebar after="hotpink" vertical labels ticks="2"></dv-scalebar>
-<dv-scalebar after="hotpink" reverse vertical labels ticks="2"></dv-scalebar>
+<dv-scalebar vertical ticks colors="#bbb,#444"></dv-scalebar>
+<dv-scalebar after="hotpink" vertical labels ticks="2" colors="#bbb,#444"></dv-scalebar>
+<dv-scalebar after="hotpink" reverse vertical labels ticks="2" colors="#bbb,#444"></dv-scalebar>
 </div>
 </div>

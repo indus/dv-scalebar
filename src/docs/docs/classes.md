@@ -10,11 +10,11 @@ An empty [`classes`](/docs/classes) attribute uses existing information (e.g., t
 
 **Code**
 ```html{4}
-<dv-scalebar colors="orange,snow,teal" classes></dv-scalebar>
+<dv-scalebar colors="orange,beige,teal" classes></dv-scalebar>
 ```
 
 **Result**
-<dv-scalebar colors="orange,snow,teal" classes></dv-scalebar>
+<dv-scalebar colors="orange,beige,teal" classes></dv-scalebar>
 
 ## Single value
 
@@ -22,17 +22,17 @@ A single integer value for the [`classes`](/docs/classes) attribute defines that
 
 **Code**
 ```html{4}
-<dv-scalebar colors="orange,snow,teal" classes="2"></dv-scalebar>
-<dv-scalebar colors="orange,snow,teal" classes="3"></dv-scalebar>
-<dv-scalebar colors="orange,snow,teal" classes="4"></dv-scalebar>
-<dv-scalebar colors="orange,snow,teal" classes="15"></dv-scalebar>
+<dv-scalebar colors="orange,beige,teal" classes="2"></dv-scalebar>
+<dv-scalebar colors="orange,beige,teal" classes="3"></dv-scalebar>
+<dv-scalebar colors="orange,beige,teal" classes="4"></dv-scalebar>
+<dv-scalebar colors="orange,beige,teal" classes="15"></dv-scalebar>
 ```
 
 **Result**
-<dv-scalebar colors="orange,snow,teal" classes="2"></dv-scalebar>
-<dv-scalebar colors="orange,snow,teal" classes="3"></dv-scalebar>
-<dv-scalebar colors="orange,snow,teal" classes="4"></dv-scalebar>
-<dv-scalebar colors="orange,snow,teal" classes="15"></dv-scalebar>
+<dv-scalebar colors="orange,beige,teal" classes="2"></dv-scalebar>
+<dv-scalebar colors="orange,beige,teal" classes="3"></dv-scalebar>
+<dv-scalebar colors="orange,beige,teal" classes="4"></dv-scalebar>
+<dv-scalebar colors="orange,beige,teal" classes="15"></dv-scalebar>
 
 ## Multiple values
 
@@ -40,10 +40,10 @@ Multiple values between 0 and 1 for the [`classes`](/docs/classes) attribute all
 
 **Code**
 ```html{4}
-<dv-scalebar colors="orange,snow,teal" classes="0,.4,.6,1"></dv-scalebar>
-<dv-scalebar colors="orange,snow,teal" classes="0,.1,.3,.6,1"></dv-scalebar>
+<dv-scalebar colors="orange,beige,teal" classes="0,.4,.6,1"></dv-scalebar>
+<dv-scalebar colors="orange,beige,teal" classes="0,.1,.3,.6,1"></dv-scalebar>
 ```
 
 **Result**
-<dv-scalebar colors="orange,snow,teal" classes="0,.4,.6,1"></dv-scalebar>
-<dv-scalebar colors="orange,snow,teal" classes="0,.1,.3,.6,1"></dv-scalebar>
+<dv-scalebar colors="orange,beige,teal" classes="0,.4,.6,1"></dv-scalebar>
+<dv-scalebar colors="orange,beige,teal" classes="0,.1,.3,.6,1"></dv-scalebar>

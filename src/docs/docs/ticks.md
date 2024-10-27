@@ -10,10 +10,10 @@ The [`ticks`](/docs/ticks) attribute without a value adds a tick at the minimum 
 
 **Code**
 ```html{4}
-<dv-scalebar colors="Viridis" ticks></dv-scalebar>
+<dv-scalebar colors="pink,teal" ticks></dv-scalebar>
 ```
 **Result**
-<dv-scalebar colors="Viridis" ticks></dv-scalebar>
+<dv-scalebar colors="pink,teal" ticks></dv-scalebar>
 
 ## Single Value
 
@@ -21,16 +21,16 @@ A single integer value for the [`ticks`](/docs/ticks) attribute adds that number
 
 **Code**
 ```html{4}
-<dv-scalebar colors="Viridis" ticks="1"></dv-scalebar>
-<dv-scalebar colors="Viridis" ticks="3"></dv-scalebar>
-<dv-scalebar colors="Viridis" ticks="4"></dv-scalebar>
-<dv-scalebar colors="Viridis" ticks="15"></dv-scalebar>
+<dv-scalebar colors="pink,teal" ticks="1"></dv-scalebar>
+<dv-scalebar colors="pink,teal" ticks="3"></dv-scalebar>
+<dv-scalebar colors="pink,teal" ticks="4"></dv-scalebar>
+<dv-scalebar colors="pink,teal" ticks="15"></dv-scalebar>
 ```
 **Result**
-<dv-scalebar colors="Viridis" ticks="1"></dv-scalebar>
-<dv-scalebar colors="Viridis" ticks="3"></dv-scalebar>
-<dv-scalebar colors="Viridis" ticks="4"></dv-scalebar>
-<dv-scalebar colors="Viridis" ticks="15"></dv-scalebar>
+<dv-scalebar colors="pink,teal" ticks="1"></dv-scalebar>
+<dv-scalebar colors="pink,teal" ticks="3"></dv-scalebar>
+<dv-scalebar colors="pink,teal" ticks="4"></dv-scalebar>
+<dv-scalebar colors="pink,teal" ticks="15"></dv-scalebar>
 
 ## Multiple Values
 
@@ -38,9 +38,9 @@ Multiple values between 0 and 1 for the [`ticks`](/docs/ticks) attribute allow y
 
 **Code**
 ```html{4}
-<dv-scalebar colors="Viridis" ticks="0,.4,.6,1"></dv-scalebar>
-<dv-scalebar colors="Viridis" ticks="0,.1,.3,.6,1"></dv-scalebar>
+<dv-scalebar colors="pink,teal" ticks="0,.4,.6,1"></dv-scalebar>
+<dv-scalebar colors="pink,teal" ticks="0,.1,.3,.6,1"></dv-scalebar>
 ```
 **Result**
-<dv-scalebar colors="Viridis" ticks="0,.4,.6,1"></dv-scalebar>
-<dv-scalebar colors="Viridis" ticks="0,.1,.3,.6,1"></dv-scalebar>
+<dv-scalebar colors="pink,teal" ticks="0,.4,.6,1"></dv-scalebar>
+<dv-scalebar colors="pink,teal" ticks="0,.1,.3,.6,1"></dv-scalebar>

@@ -10,10 +10,10 @@ The [`labels`](/docs/labels) attribute without a value adds 0 and 1 as labels fo
 
 **Code**
 ```html{4}
-<dv-scalebar colors="OrRd" labels></dv-scalebar>
+<dv-scalebar colors="gold,teal" labels></dv-scalebar>
 ```
 **Result**
-<dv-scalebar colors="OrRd" labels></dv-scalebar>
+<dv-scalebar colors="gold,teal" labels></dv-scalebar>
 
 ## Single value
 
@@ -21,12 +21,12 @@ A single value for the [`labels`](/docs/labels) attribute sets the label at the 
 
 **Code**
 ```html{4}
-<dv-scalebar colors="OrRd" labels="100"></dv-scalebar>
-<dv-scalebar colors="OrRd" labels="max"></dv-scalebar>
+<dv-scalebar colors="gold,teal" labels="100"></dv-scalebar>
+<dv-scalebar colors="gold,teal" labels="max"></dv-scalebar>
 ```
 **Result**
-<dv-scalebar colors="OrRd" labels="100"></dv-scalebar>
-<dv-scalebar colors="OrRd" labels="max"></dv-scalebar>
+<dv-scalebar colors="gold,teal" labels="100"></dv-scalebar>
+<dv-scalebar colors="gold,teal" labels="max"></dv-scalebar>
 
 ## Multiple Values
 
@@ -34,11 +34,11 @@ Multiple values for the [`labels`](/docs/labels) attribute are spaced evenly, as
 
 **Code**
 ```html{4}
-<dv-scalebar colors="OrRd" labels="min,max"></dv-scalebar>
-<dv-scalebar colors="OrRd" labels="0,1,2"></dv-scalebar>
-<dv-scalebar colors="OrRd" labels="zero,1,2,3"></dv-scalebar>
+<dv-scalebar colors="gold,teal" labels="min,max"></dv-scalebar>
+<dv-scalebar colors="gold,teal" labels="0,1,2"></dv-scalebar>
+<dv-scalebar colors="gold,teal" labels="zero,1,2,3"></dv-scalebar>
 ```
 **Result**
-<dv-scalebar colors="OrRd" labels="min,max"></dv-scalebar>
-<dv-scalebar colors="OrRd" labels="0,1,2"></dv-scalebar>
-<dv-scalebar colors="OrRd" labels="zero,1,2,3"></dv-scalebar>
+<dv-scalebar colors="gold,teal" labels="min,max"></dv-scalebar>
+<dv-scalebar colors="gold,teal" labels="0,1,2"></dv-scalebar>
+<dv-scalebar colors="gold,teal" labels="zero,1,2,3"></dv-scalebar>

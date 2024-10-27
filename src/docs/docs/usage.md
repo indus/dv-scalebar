@@ -73,15 +73,15 @@ The scalebar can be enhanced with basic attributes such as [`colors`](/docs/colo
 
 **Code**
 ```html{4}
-<dv-scalebar colors="OrRd" labels></dv-scalebar>
-<dv-scalebar colors="OrRd" labels="9"></dv-scalebar>
-<dv-scalebar colors="OrRd" labels="zero,50,1e2"></dv-scalebar>
+<dv-scalebar colors="gold,teal" labels></dv-scalebar>
+<dv-scalebar colors="gold,teal" labels="9"></dv-scalebar>
+<dv-scalebar colors="gold,teal" labels="zero,50,1e2"></dv-scalebar>
 ```
 
 **Result**
-<dv-scalebar colors="OrRd" labels></dv-scalebar>
-<dv-scalebar colors="OrRd" labels="9"></dv-scalebar>
-<dv-scalebar colors="OrRd" labels="zero,50,1e2"></dv-scalebar>
+<dv-scalebar colors="gold,teal" labels></dv-scalebar>
+<dv-scalebar colors="gold,teal" labels="9"></dv-scalebar>
+<dv-scalebar colors="gold,teal" labels="zero,50,1e2"></dv-scalebar>
 
 [more Examples](/docs/labels)
 
@@ -89,15 +89,15 @@ The scalebar can be enhanced with basic attributes such as [`colors`](/docs/colo
 
 **Code**
 ```html{4}
-<dv-scalebar colors="Viridis" ticks></dv-scalebar>
-<dv-scalebar colors="Viridis" ticks="11"></dv-scalebar>
-<dv-scalebar colors="Viridis" ticks="0,.1,.3,.6,1"></dv-scalebar>
+<dv-scalebar colors="pink,teal" ticks></dv-scalebar>
+<dv-scalebar colors="pink,teal" ticks="11"></dv-scalebar>
+<dv-scalebar colors="pink,teal" ticks="0,.1,.3,.6,1"></dv-scalebar>
 ```
 
 **Result**
-<dv-scalebar colors="Viridis" ticks></dv-scalebar>
-<dv-scalebar colors="Viridis" ticks="11"></dv-scalebar>
-<dv-scalebar colors="Viridis" ticks="0,.1,.3,.6,1"></dv-scalebar>
+<dv-scalebar colors="pink,teal" ticks></dv-scalebar>
+<dv-scalebar colors="pink,teal" ticks="11"></dv-scalebar>
+<dv-scalebar colors="pink,teal" ticks="0,.1,.3,.6,1"></dv-scalebar>
 
 [more Examples](/docs/ticks)
 
@@ -105,15 +105,15 @@ The scalebar can be enhanced with basic attributes such as [`colors`](/docs/colo
 
 **Code**
 ```html{4}
-<dv-scalebar colors="orange,snow,teal" classes></dv-scalebar>
-<dv-scalebar colors="orange,snow,teal" classes="9"></dv-scalebar>
-<dv-scalebar colors="orange,snow,teal" classes="0,.1,.3,.6,1"></dv-scalebar>
+<dv-scalebar colors="orange,beige,teal" classes></dv-scalebar>
+<dv-scalebar colors="orange,beige,teal" classes="9"></dv-scalebar>
+<dv-scalebar colors="orange,beige,teal" classes="0,.1,.3,.6,1"></dv-scalebar>
 ```
 
 **Result**
-<dv-scalebar colors="orange,snow,teal" classes></dv-scalebar>
-<dv-scalebar colors="orange,snow,teal" classes="9"></dv-scalebar>
-<dv-scalebar colors="orange,snow,teal" classes="0,.1,.3,.6,1"></dv-scalebar>
+<dv-scalebar colors="orange,beige,teal" classes></dv-scalebar>
+<dv-scalebar colors="orange,beige,teal" classes="9"></dv-scalebar>
+<dv-scalebar colors="orange,beige,teal" classes="0,.1,.3,.6,1"></dv-scalebar>
 
 [more Examples](/docs/classes)
 
