@@ -849,7 +849,7 @@ d.prototype.alpha = function(e, t = !1) {
 d.prototype.clipped = function() {
   return this._rgb._clipped || !1;
 };
-const W = {
+const K = {
   // Corresponds roughly to RGB brighter/darker
   Kn: 18,
   // D65 standard referent
@@ -949,23 +949,23 @@ function J(e) {
   const t = mn.get(String(e).toLowerCase());
   if (!t)
     throw new Error("unknown Lab illuminant " + e);
-  W.labWhitePoint = e, W.Xn = t[0], W.Zn = t[1];
+  K.labWhitePoint = e, K.Xn = t[0], K.Zn = t[1];
 }
 function Nt() {
-  return W.labWhitePoint;
+  return K.labWhitePoint;
 }
 const ve = (...e) => {
   e = k(e, "lab");
   const [t, r, n] = e, [s, o, a] = gn(t, r, n), [i, c, l] = dr(s, o, a);
   return [i, c, l, e.length > 3 ? e[3] : 1];
 }, gn = (e, t, r) => {
-  const { kE: n, kK: s, kKE: o, Xn: a, Yn: i, Zn: c } = W, l = (e + 16) / 116, h = 2e-3 * t + l, u = l - 5e-3 * r, b = h * h * h, m = u * u * u, y = b > n ? b : (116 * h - 16) / s, A = e > o ? Math.pow((e + 16) / 116, 3) : e / s, v = m > n ? m : (116 * u - 16) / s, g = y * a, O = A * i, L = v * c;
+  const { kE: n, kK: s, kKE: o, Xn: a, Yn: i, Zn: c } = K, l = (e + 16) / 116, h = 2e-3 * t + l, u = l - 5e-3 * r, b = h * h * h, m = u * u * u, y = b > n ? b : (116 * h - 16) / s, A = e > o ? Math.pow((e + 16) / 116, 3) : e / s, v = m > n ? m : (116 * u - 16) / s, g = y * a, O = A * i, L = v * c;
   return [g, O, L];
 }, te = (e) => {
   const t = Math.sign(e);
   return e = Math.abs(e), (e <= 31308e-7 ? e * 12.92 : 1.055 * Math.pow(e, 1 / 2.4) - 0.055) * t;
 }, dr = (e, t, r) => {
-  const { MtxAdaptMa: n, MtxAdaptMaI: s, MtxXYZ2RGB: o, RefWhiteRGB: a, Xn: i, Yn: c, Zn: l } = W, h = i * n.m00 + c * n.m10 + l * n.m20, u = i * n.m01 + c * n.m11 + l * n.m21, b = i * n.m02 + c * n.m12 + l * n.m22, m = a.X * n.m00 + a.Y * n.m10 + a.Z * n.m20, y = a.X * n.m01 + a.Y * n.m11 + a.Z * n.m21, A = a.X * n.m02 + a.Y * n.m12 + a.Z * n.m22, v = (e * n.m00 + t * n.m10 + r * n.m20) * (m / h), g = (e * n.m01 + t * n.m11 + r * n.m21) * (y / u), O = (e * n.m02 + t * n.m12 + r * n.m22) * (A / b), L = v * s.m00 + g * s.m10 + O * s.m20, R = v * s.m01 + g * s.m11 + O * s.m21, x = v * s.m02 + g * s.m12 + O * s.m22, E = te(
+  const { MtxAdaptMa: n, MtxAdaptMaI: s, MtxXYZ2RGB: o, RefWhiteRGB: a, Xn: i, Yn: c, Zn: l } = K, h = i * n.m00 + c * n.m10 + l * n.m20, u = i * n.m01 + c * n.m11 + l * n.m21, b = i * n.m02 + c * n.m12 + l * n.m22, m = a.X * n.m00 + a.Y * n.m10 + a.Z * n.m20, y = a.X * n.m01 + a.Y * n.m11 + a.Z * n.m21, A = a.X * n.m02 + a.Y * n.m12 + a.Z * n.m22, v = (e * n.m00 + t * n.m10 + r * n.m20) * (m / h), g = (e * n.m01 + t * n.m11 + r * n.m21) * (y / u), O = (e * n.m02 + t * n.m12 + r * n.m22) * (A / b), L = v * s.m00 + g * s.m10 + O * s.m20, R = v * s.m01 + g * s.m11 + O * s.m21, x = v * s.m02 + g * s.m12 + O * s.m22, E = te(
     L * o.m00 + R * o.m10 + x * o.m20
   ), f = te(
     L * o.m01 + R * o.m11 + x * o.m21
@@ -978,7 +978,7 @@ const ve = (...e) => {
   return [c, l, h, ...s.length > 0 && s[0] < 1 ? [s[0]] : []];
 };
 function yn(e, t, r) {
-  const { Xn: n, Yn: s, Zn: o, kE: a, kK: i } = W, c = e / n, l = t / s, h = r / o, u = c > a ? Math.pow(c, 1 / 3) : (i * c + 16) / 116, b = l > a ? Math.pow(l, 1 / 3) : (i * l + 16) / 116, m = h > a ? Math.pow(h, 1 / 3) : (i * h + 16) / 116;
+  const { Xn: n, Yn: s, Zn: o, kE: a, kK: i } = K, c = e / n, l = t / s, h = r / o, u = c > a ? Math.pow(c, 1 / 3) : (i * c + 16) / 116, b = l > a ? Math.pow(l, 1 / 3) : (i * l + 16) / 116, m = h > a ? Math.pow(h, 1 / 3) : (i * h + 16) / 116;
   return [116 * b - 16, 500 * (u - b), 200 * (b - m)];
 }
 function ee(e) {
@@ -987,7 +987,7 @@ function ee(e) {
 }
 const br = (e, t, r) => {
   e = ee(e / 255), t = ee(t / 255), r = ee(r / 255);
-  const { MtxRGB2XYZ: n, MtxAdaptMa: s, MtxAdaptMaI: o, Xn: a, Yn: i, Zn: c, As: l, Bs: h, Cs: u } = W;
+  const { MtxRGB2XYZ: n, MtxAdaptMa: s, MtxAdaptMaI: o, Xn: a, Yn: i, Zn: c, As: l, Bs: h, Cs: u } = K;
   let b = e * n.m00 + t * n.m10 + r * n.m20, m = e * n.m01 + t * n.m11 + r * n.m21, y = e * n.m02 + t * n.m12 + r * n.m22;
   const A = a * s.m00 + i * s.m10 + c * s.m20, v = a * s.m01 + i * s.m11 + c * s.m21, g = a * s.m02 + i * s.m12 + c * s.m22;
   let O = b * s.m00 + m * s.m10 + y * s.m20, L = b * s.m01 + m * s.m11 + y * s.m21, R = b * s.m02 + m * s.m12 + y * s.m22;
@@ -1008,7 +1008,7 @@ w.autodetect.push({
 });
 d.prototype.darken = function(e = 1) {
   const t = this, r = t.lab();
-  return r[0] -= W.Kn * e, new d(r, "lab").alpha(t.alpha(), !0);
+  return r[0] -= K.Kn * e, new d(r, "lab").alpha(t.alpha(), !0);
 };
 d.prototype.brighten = function(e = 1) {
   return this.darken(-e);
@@ -1094,7 +1094,7 @@ w.format.hcl = En;
 );
 d.prototype.saturate = function(e = 1) {
   const t = this, r = t.lch();
-  return r[1] += W.Kn * e, r[1] < 0 && (r[1] = 0), new d(r, "lch").alpha(t.alpha(), !0);
+  return r[1] += K.Kn * e, r[1] < 0 && (r[1] = 0), new d(r, "lch").alpha(t.alpha(), !0);
 };
 d.prototype.desaturate = function(e = 1) {
   return this.saturate(-e);
@@ -1881,7 +1881,7 @@ const Ge = 0.027, Hs = 5e-4, Bs = 0.1, Xe = 1.14, Tt = 0.022, Ie = 1.414, Gs = (
 function qe(e, t, r) {
   return 0.2126729 * Math.pow(e / 255, 2.4) + 0.7151522 * Math.pow(t / 255, 2.4) + 0.072175 * Math.pow(r / 255, 2.4);
 }
-const { sqrt: K, pow: z, min: Xs, max: Is, atan2: De, abs: Ze, cos: jt, sin: We, exp: qs, PI: Ke } = Math;
+const { sqrt: V, pow: z, min: Xs, max: Is, atan2: De, abs: Ze, cos: jt, sin: We, exp: qs, PI: Ke } = Math;
 function Ds(e, t, r = 1, n = 1, s = 1) {
   var o = function(Wt) {
     return 360 * Wt / (2 * Ke);
@@ -1889,10 +1889,10 @@ function Ds(e, t, r = 1, n = 1, s = 1) {
     return 2 * Ke * Wt / 360;
   };
   e = new d(e), t = new d(t);
-  const [i, c, l] = Array.from(e.lab()), [h, u, b] = Array.from(t.lab()), m = (i + h) / 2, y = K(z(c, 2) + z(l, 2)), A = K(z(u, 2) + z(b, 2)), v = (y + A) / 2, g = 0.5 * (1 - K(z(v, 7) / (z(v, 7) + z(25, 7)))), O = c * (1 + g), L = u * (1 + g), R = K(z(O, 2) + z(l, 2)), x = K(z(L, 2) + z(b, 2)), E = (R + x) / 2, f = o(De(l, O)), p = o(De(b, L)), $ = f >= 0 ? f : f + 360, _ = p >= 0 ? p : p + 360, M = Ze($ - _) > 180 ? ($ + _ + 360) / 2 : ($ + _) / 2, S = 1 - 0.17 * jt(a(M - 30)) + 0.24 * jt(a(2 * M)) + 0.32 * jt(a(3 * M + 6)) - 0.2 * jt(a(4 * M - 63));
+  const [i, c, l] = Array.from(e.lab()), [h, u, b] = Array.from(t.lab()), m = (i + h) / 2, y = V(z(c, 2) + z(l, 2)), A = V(z(u, 2) + z(b, 2)), v = (y + A) / 2, g = 0.5 * (1 - V(z(v, 7) / (z(v, 7) + z(25, 7)))), O = c * (1 + g), L = u * (1 + g), R = V(z(O, 2) + z(l, 2)), x = V(z(L, 2) + z(b, 2)), E = (R + x) / 2, f = o(De(l, O)), p = o(De(b, L)), $ = f >= 0 ? f : f + 360, _ = p >= 0 ? p : p + 360, M = Ze($ - _) > 180 ? ($ + _ + 360) / 2 : ($ + _) / 2, S = 1 - 0.17 * jt(a(M - 30)) + 0.24 * jt(a(2 * M)) + 0.32 * jt(a(3 * M + 6)) - 0.2 * jt(a(4 * M - 63));
   let N = _ - $;
-  N = Ze(N) <= 180 ? N : _ <= $ ? N + 360 : N - 360, N = 2 * K(R * x) * We(a(N) / 2);
-  const Z = h - i, wt = x - R, Lt = 1 + 0.015 * z(m - 50, 2) / K(20 + z(m - 50, 2)), Ot = 1 + 0.045 * E, Se = 1 + 0.015 * E * S, jr = 30 * qs(-z((M - 275) / 25, 2)), Ur = -(2 * K(z(E, 7) / (z(E, 7) + z(25, 7)))) * We(2 * a(jr)), Yr = K(
+  N = Ze(N) <= 180 ? N : _ <= $ ? N + 360 : N - 360, N = 2 * V(R * x) * We(a(N) / 2);
+  const Z = h - i, wt = x - R, Lt = 1 + 0.015 * z(m - 50, 2) / V(20 + z(m - 50, 2)), Ot = 1 + 0.045 * E, Se = 1 + 0.015 * E * S, jr = 30 * qs(-z((M - 275) / 25, 2)), Ur = -(2 * V(z(E, 7) / (z(E, 7) + z(25, 7)))) * We(2 * a(jr)), Yr = V(
     z(Z / (r * Lt), 2) + z(wt / (n * Ot), 2) + z(N / (s * Se), 2) + Ur * (wt / (n * Ot)) * (N / (s * Se))
   );
   return Is(0, Xs(100, Yr));
@@ -2265,7 +2265,7 @@ const Je = 42, uo = [
   1
 ], le = (e, t = 0) => Array.isArray(e) ? e : Number.isInteger(e) ? Array(e + t).fill(e + t - 1).map(
   (r, n) => n / Math.max(r, 1)
-) : (console.warn("expected prop to be 'number[]' or 'int'", e), []), be = (e, t) => ((t ? 1 - e : e) * 100).toFixed(2) + "%", fe = (e, t, r = t, n = !1) => [be(t), e(n ? 1 - r : r).hex()], V = (e, t = !1) => {
+) : (console.warn("expected prop to be 'number[]' or 'int'", e), []), be = (e, t) => ((t ? 1 - e : e) * 100).toFixed(2) + "%", fe = (e, t, r = t, n = !1) => [be(t), e(n ? 1 - r : r).hex()], W = (e, t = !1) => {
   if (e === "" || e === !0) return !0;
   if (!e) return;
   let r = typeof e == "string" || e instanceof String ? e.startsWith("[") ? JSON.parse(e) : e.split(",") : Array.isArray(e) ? [...e] : [e];
@@ -2289,7 +2289,7 @@ const Je = 42, uo = [
     colorClass: A,
     centeredEdgeLabels: v
   } = e;
-  t = V(t), r = V(r), n = V(n, !0), s = V(s, !0), y = V(y, !0), o = V(o), i = V(i), h = V(h), m = V(m), r === !0 && (Array.isArray(n) ? r = [...n] : Array.isArray(s) && (r = [...s])), a ^ o && (Array.isArray(n) && (n = n.reverse().map((f) => 1 - f)), Array.isArray(s) && (s = s.reverse().map((f) => 1 - f)));
+  t = W(t), r = W(r), n = W(n, !0), s = W(s, !0), y = W(y, !0), o = W(o), a = W(a), i = W(i), h = W(h), m = W(m), r === !0 && (Array.isArray(n) ? r = [...n] : Array.isArray(s) && (r = [...s])), a ^ o && (Array.isArray(n) && (n = n.reverse().map((f) => 1 - f)), Array.isArray(s) && (s = s.reverse().map((f) => 1 - f)));
   let g = null, O = null, L = null, R = null;
   s === !0 && (n ? s = Array.isArray(n) ? n : n - 1 : Array.isArray(r) ? s = r == null ? void 0 : r.length : Array.isArray(t) && (s = t == null ? void 0 : t.length));
   let x;

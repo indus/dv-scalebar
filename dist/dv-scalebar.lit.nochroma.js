@@ -643,7 +643,7 @@ const wt = 42, re = [
     colorClass: x,
     centeredEdgeLabels: M
   } = i;
-  t = E(t), e = E(e), s = E(s, !0), r = E(r, !0), b = E(b, !0), o = E(o), l = E(l), p = E(p), _ = E(_), e === !0 && (Array.isArray(s) ? e = [...s] : Array.isArray(r) && (e = [...r])), a ^ o && (Array.isArray(s) && (s = s.reverse().map((f) => 1 - f)), Array.isArray(r) && (r = r.reverse().map((f) => 1 - f)));
+  t = E(t), e = E(e), s = E(s, !0), r = E(r, !0), b = E(b, !0), o = E(o), a = E(a), l = E(l), p = E(p), _ = E(_), e === !0 && (Array.isArray(s) ? e = [...s] : Array.isArray(r) && (e = [...r])), a ^ o && (Array.isArray(s) && (s = s.reverse().map((f) => 1 - f)), Array.isArray(r) && (r = r.reverse().map((f) => 1 - f)));
   let A = null, Q = null, q = null, dt = null;
   r === !0 && (s ? r = Array.isArray(s) ? s : s - 1 : Array.isArray(e) ? r = e == null ? void 0 : e.length : Array.isArray(t) && (r = t == null ? void 0 : t.length));
   let d;

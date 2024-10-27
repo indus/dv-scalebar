@@ -50,7 +50,7 @@ const M = 42, E = [
     ticks: t,
     classes: s,
     vertical: n,
-    reverse: d,
+    reverse: A,
     flip: c,
     before: g,
     after: f,
@@ -62,11 +62,11 @@ const M = 42, E = [
     colorClass: v,
     centeredEdgeLabels: b
   } = a;
-  r = u(r), e = u(e), t = u(t, !0), s = u(s, !0), h = u(h, !0), n = u(n), c = u(c), m = u(m), _ = u(_), e === !0 && (Array.isArray(t) ? e = [...t] : Array.isArray(s) && (e = [...s])), d ^ n && (Array.isArray(t) && (t = t.reverse().map((i) => 1 - i)), Array.isArray(s) && (s = s.reverse().map((i) => 1 - i)));
+  r = u(r), e = u(e), t = u(t, !0), s = u(s, !0), h = u(h, !0), n = u(n), A = u(A), c = u(c), m = u(m), _ = u(_), e === !0 && (Array.isArray(t) ? e = [...t] : Array.isArray(s) && (e = [...s])), A ^ n && (Array.isArray(t) && (t = t.reverse().map((i) => 1 - i)), Array.isArray(s) && (s = s.reverse().map((i) => 1 - i)));
   let y = null, B = null, x = null, P = null;
   s === !0 && (t ? s = Array.isArray(t) ? t : t - 1 : Array.isArray(e) ? s = e == null ? void 0 : e.length : Array.isArray(r) && (s = r == null ? void 0 : r.length));
   let l;
-  if (r === !0 ? l = N.scale(E).domain(R) : r === void 0 ? r = ["#fff", "#000"] : Array.isArray(r) || (r = N.brewer[r] || ["#fff", r]), r !== !0 && d ^ n && (r = [...r].reverse()), l = l || N.scale(r), w && (l = l.mode(w)), C && (l = l.gamma(C)), _ && (l = l.correctLightness()), h && (l = l.padding(h)), s)
+  if (r === !0 ? l = N.scale(E).domain(R) : r === void 0 ? r = ["#fff", "#000"] : Array.isArray(r) || (r = N.brewer[r] || ["#fff", r]), r !== !0 && A ^ n && (r = [...r].reverse()), l = l || N.scale(r), w && (l = l.mode(w)), C && (l = l.gamma(C)), _ && (l = l.correctLightness()), h && (l = l.padding(h)), s)
     switch (v) {
       case "average":
         l = l.domain([0, 1]);
@@ -84,26 +84,26 @@ const M = 42, E = [
     let i = T(s, 1);
     if (Array.isArray(i)) {
       let o = i.length - 1;
-      B = i.reduce((A, k, S, I) => {
+      B = i.reduce((d, k, S, I) => {
         let F = I[S + 1], G = (k + F) / 2;
-        return S < o && S && A.push(L(l, k, G, m)), S < o - 1 && A.push(L(l, F, G, m)), A;
+        return S < o && S && d.push(L(l, k, G, m)), S < o - 1 && d.push(L(l, F, G, m)), d;
       }, []), y = i;
     }
   }
   if (t !== void 0) {
     t === !0 && (Array.isArray(y) ? t = y : Array.isArray(e) ? t = e.length : t = 2);
     let i = T(t);
-    Array.isArray(i) && (x = i.map((o) => $(o, n)), y = y || i, d ^ n && (x = x.reverse()));
+    Array.isArray(i) && (x = i.map((o) => $(o, n)), y = y || i, A ^ n && (x = x.reverse()));
   }
   if (e !== void 0) {
     if (e === !0)
       if (y) {
         let o = y.length - (s ? 1 : 0);
         e = Array(o).fill(Math.max(o - 1, 1)).map(
-          (A, k) => `${parseFloat((k / A).toFixed(2))}`
+          (d, k) => `${parseFloat((k / d).toFixed(2))}`
         );
       } else e = ["0", "1"];
-    Array.isArray(e) || (e = ["0", e]), d ^ n && Array.isArray(e) && (e = e.reverse());
+    Array.isArray(e) || (e = ["0", e]), A ^ n && Array.isArray(e) && (e = e.reverse());
     let i;
     switch (y && e.length - y.length) {
       case 0:
@@ -116,7 +116,7 @@ const M = 42, E = [
         e.length > 1 ? (i = (o) => o / (e.length - 1), b = !1) : (i = () => 0.5, b = !0);
         break;
     }
-    P = e.map((o, A) => [$(n ? 1 - i(A) : i(A)), o]);
+    P = e.map((o, d) => [$(n ? 1 - i(d) : i(d)), o]);
   }
   return {
     stops$: B,
@@ -156,7 +156,7 @@ const z = O({
         ticks$: t,
         labels$: s,
         before: n,
-        after: d,
+        after: A,
         vertical: c,
         klass: g
       } = U(a);
@@ -188,7 +188,7 @@ const z = O({
           width: c ? null : "100%",
           height: c ? "100%" : null
         }),
-        d ? p("rect", { class: "a", fill: d }) : null,
+        A ? p("rect", { class: "a", fill: A }) : null,
         t == null ? void 0 : t.map(
           (f) => p("use", {
             href: `#tk${r}`,

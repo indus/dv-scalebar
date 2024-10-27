@@ -125,7 +125,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 ---
 
 Name: dv-scalebar
-Version: 0.1.1
+Version: 0.1.2
 License: BSD-3-Clause
 Private: false
 Repository: git+https://github.com/indus/dv-scalebar

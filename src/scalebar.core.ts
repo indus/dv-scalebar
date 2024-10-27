@@ -99,6 +99,7 @@ export default (props: any) => {
   classes = normalize(classes, true);
   colorPadding = normalize(colorPadding, true);
   vertical = normalize(vertical);
+  reverse = normalize(reverse);
   flip = normalize(flip);
   colorReverse = normalize(colorReverse);
   colorCorrectLightness = normalize(colorCorrectLightness);
