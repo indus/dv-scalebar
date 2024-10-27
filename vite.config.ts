@@ -36,7 +36,7 @@ export default defineConfig(Object.assign({}, config, {
   plugins: [
     vue(),
     dts({
-      beforeWriteFile: (filePath) => <any> filePath.endsWith("dts.d.ts"),
+      beforeWriteFile: (filePath) => <any> !filePath.endsWith("dts.d.ts"),
     }),
   ],
   build: {
