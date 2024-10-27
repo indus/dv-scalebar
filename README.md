@@ -128,7 +128,7 @@ Without any attributes, the scalebar renders as a simple grayscale gradient.
 ```html{4}
 <dv-scalebar></dv-scalebar>
 ```
-
+[Results](https://dv-scalebar.js.org/docs/usage#hello-world-example)
 
 ### "Real World" Examples
 
@@ -146,6 +146,7 @@ The scalebar can be enhanced with basic attributes such as [`colors`](https://dv
 <dv-scalebar vertical colors="BrBG" reverse labels="-80,-40,0,70,140" ticks="9"></dv-scalebar>
 <dv-scalebar vertical colors="dodgerblue,orangered" reverse labels="6°,10°,20°,27°" ticks="0,.19,0.66,1" before after></dv-scalebar>
 ```
+[Results](https://dv-scalebar.js.org/docs/usage#real-world-examples)
 
 ### Colors
 
@@ -157,7 +158,7 @@ The scalebar can be enhanced with basic attributes such as [`colors`](https://dv
 <dv-scalebar colors="yellow,red,black"></dv-scalebar>
 <dv-scalebar colors="Viridis"></dv-scalebar>
 ```
-[Results](https://dv-scalebar.js.org/docs/colors)
+[Results](https://dv-scalebar.js.org/docs/usage#colors)
 
 ### Labels
 
@@ -167,7 +168,7 @@ The scalebar can be enhanced with basic attributes such as [`colors`](https://dv
 <dv-scalebar colors="OrRd" labels="9"></dv-scalebar>
 <dv-scalebar colors="OrRd" labels="zero,50,1e2"></dv-scalebar>
 ```
-[Results](https://dv-scalebar.js.org/docs/labels)
+[Results](https://dv-scalebar.js.org/docs/usage#labels)
 
 ### Ticks
 
@@ -177,7 +178,7 @@ The scalebar can be enhanced with basic attributes such as [`colors`](https://dv
 <dv-scalebar colors="PuOr" ticks="11"></dv-scalebar>
 <dv-scalebar colors="PuOr" ticks="0,.1,.3,.6,1"></dv-scalebar>
 ```
-[Results](https://dv-scalebar.js.org/docs/ticks)
+[Results](https://dv-scalebar.js.org/docs/usage#ticks)
 
 ### Classes
 
@@ -187,7 +188,7 @@ The scalebar can be enhanced with basic attributes such as [`colors`](https://dv
 <dv-scalebar colors="orange,snow,teal" classes="9"></dv-scalebar>
 <dv-scalebar colors="orange,snow,teal" classes="0,.1,.3,.6,1"></dv-scalebar>
 ```
-[Results](https://dv-scalebar.js.org/docs/classes)
+[Results](https://dv-scalebar.js.org/docs/usage#classes)
 
 ### More
 
