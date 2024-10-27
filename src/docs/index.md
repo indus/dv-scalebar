@@ -38,10 +38,14 @@ features:
 <dv-scalebar colors="piYG" labels="min,-1σ,0,1σ,max" classes="0,.16,.5,.84,1" ticks></dv-scalebar>
 </div>
 <div class="row">
+<div class="row">
 <dv-scalebar vertical colors="PuBuGn" labels ticks="0,.1,.3,.6,1"></dv-scalebar>
 <dv-scalebar vertical colors="YlGnBu" labels="low,medium,high" classes="0,.16,.84,1" ticks></dv-scalebar>
+</div>
+<div class="row">
 <dv-scalebar vertical colors="BrBG" reverse labels="-80,-40,0,70,140" ticks="9"></dv-scalebar>
 <dv-scalebar vertical colors="dodgerblue,orangered" reverse labels="6°,10°,20°,27°" ticks="0,.19,0.66,1" before after></dv-scalebar>
+</div>
 </div>
 </div>
 </div>
