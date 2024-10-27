@@ -1,6 +1,6 @@
 # Reverse
 
-The boolean attribute [`reverse`](/docs/reverse) is used to reverse the [`colors`](/docs/colors), [`labels`](/docs/labels), [`ticks`](/docs/ticks), and [`classes`](/docs/classes) of the scalebar. In a [`vertical`](/docs/vertical) layout, the values will run from top to bottom.
+The boolean attribute [`reverse`](/docs/reverse) is used to reverse the [`colors`](/docs/colors), [`labels`](/docs/labels), [`ticks`](/docs/ticks), and [`classes`](/docs/classes) of the scalebar. In a [`vertical`](/docs/vertical) layout, the values will then run from bottom to top.
 
 **Note:**
 To only flip the colors the `colorReverse` attribute can be used.
