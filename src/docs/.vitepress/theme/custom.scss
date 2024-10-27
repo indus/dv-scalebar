@@ -1,3 +1,9 @@
+.VPNav {
+    .VPImage.logo {
+        height:12px;
+    }
+}
+
 .VPHome {
     .VPHero {
         .text {
@@ -9,18 +15,18 @@
             a[href$="lit"] {
                 background: url('/logo_lit.svg') no-repeat;
             }
-    
+
             a[href$="vue"] {
                 background: url('/logo_vue.svg') no-repeat;
             }
-    
+
             a[href$="vue"],
             a[href$="lit"] {
                 height: 100%;
                 border-radius: 0;
                 background-size: contain;
                 background-position: center center;
-    
+
                 &:hover {
                     background-color: transparent;
                 }

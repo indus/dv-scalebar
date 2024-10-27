@@ -1,0 +1,49 @@
+<svg version="1.1" width="32" height="8" xmlns="http://www.w3.org/2000/svg">
+<defs>
+  <linearGradient id="lg">
+  <stop offset="0.00%" stop-color="#440154"/>
+  <stop offset="2.44%" stop-color="#45085b"/>
+  <stop offset="4.88%" stop-color="#461062"/>
+  <stop offset="7.32%" stop-color="#461768"/>
+  <stop offset="9.76%" stop-color="#471f6f"/>
+  <stop offset="12.20%" stop-color="#482676"/>
+  <stop offset="14.63%" stop-color="#462d7a"/>
+  <stop offset="17.07%" stop-color="#45347e"/>
+  <stop offset="19.51%" stop-color="#433b82"/>
+  <stop offset="21.95%" stop-color="#414185"/>
+  <stop offset="24.39%" stop-color="#3f4889"/>
+  <stop offset="26.83%" stop-color="#3d4e8b"/>
+  <stop offset="29.27%" stop-color="#3a548b"/>
+  <stop offset="31.71%" stop-color="#375a8c"/>
+  <stop offset="34.15%" stop-color="#355f8d"/>
+  <stop offset="36.59%" stop-color="#32658e"/>
+  <stop offset="39.02%" stop-color="#306a8e"/>
+  <stop offset="41.46%" stop-color="#2e708e"/>
+  <stop offset="43.90%" stop-color="#2b758f"/>
+  <stop offset="46.34%" stop-color="#297b8f"/>
+  <stop offset="48.78%" stop-color="#27808f"/>
+  <stop offset="51.22%" stop-color="#25868f"/>
+  <stop offset="53.66%" stop-color="#248b8e"/>
+  <stop offset="56.10%" stop-color="#23908d"/>
+  <stop offset="58.54%" stop-color="#21958c"/>
+  <stop offset="60.98%" stop-color="#209a8b"/>
+  <stop offset="63.41%" stop-color="#25a186"/>
+  <stop offset="65.85%" stop-color="#34aa7d"/>
+  <stop offset="68.29%" stop-color="#43b474"/>
+  <stop offset="70.73%" stop-color="#52bd6a"/>
+  <stop offset="73.17%" stop-color="#61c761"/>
+  <stop offset="75.61%" stop-color="#70cf58"/>
+  <stop offset="78.05%" stop-color="#7ed24f"/>
+  <stop offset="80.49%" stop-color="#8cd545"/>
+  <stop offset="82.93%" stop-color="#9bd83c"/>
+  <stop offset="85.37%" stop-color="#a9db33"/>
+  <stop offset="87.80%" stop-color="#b8de2b"/>
+  <stop offset="90.24%" stop-color="#c6e02a"/>
+  <stop offset="92.68%" stop-color="#d4e229"/>
+  <stop offset="95.12%" stop-color="#e2e427"/>
+  <stop offset="97.56%" stop-color="#f0e626"/>
+  <stop offset="100.00%" stop-color="#fee825"/>
+  </linearGradient>
+</defs>
+<rect fill="url('#lg')" width="32" height="32"/>
+</svg>

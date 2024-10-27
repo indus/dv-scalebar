@@ -6,10 +6,7 @@ export default defineConfig({
   description: "a scalebar web component",
   outDir: "../../docs",
   themeConfig: {
-    //carbonAds: {
-    //  code: "CESD4K3E",
-    //  placement: "jsorg",
-    //},
+    logo: '/logo.svg',
     // https://vitepress.dev/reference/default-theme-config
     nav: [
       { text: "Home", link: "/" },
@@ -73,6 +70,10 @@ export default defineConfig({
       copyright:
         'Copyright © 2024-present <a href="https://github.com/indus">Stefan Keim</a>',
     },
+    //carbonAds: {
+    //  code: "CESD4K3E",
+    //  placement: "jsorg",
+    //},
   },
   vue: {
     template: {

@@ -41,9 +41,6 @@ import "dv-scalebar/lit"
 
 In Vue, the use of Single File Components (SFCs, or .vue files) is quite common. To use `dv-scalebar` in an SFC, import it in the `<script>` section before referencing it in the `<template>` or render function.
 
-The `dv-scalebar/sfc` path targets an SFC version that uses TypeScript and includes scoped styles. Alternatively, you can import the pre-built Vue component from `dv-scalebar/vue` and separately import the style file.
-
-
 ``` Vue
 <script setup lang="ts">
 import dvScalebar from "dv-scalebar/sfc"
@@ -55,6 +52,8 @@ import dvScalebar from "dv-scalebar/sfc"
   <dv-scalebar colors labels ticks/>
 </template>
 ```
+The `dv-scalebar/sfc` path targets an SFC version that uses TypeScript and includes scoped styles. Alternatively, you can import the pre-built Vue component from `dv-scalebar/vue` and separately import the style file.
+
 ### Reactivity
 The following example demonstrates the binding of reactive variables to attributes of the scalebar component in Vue:
 
