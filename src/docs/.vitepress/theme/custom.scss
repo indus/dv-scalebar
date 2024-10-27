@@ -1,6 +1,6 @@
 .VPNav {
     .VPImage.logo {
-        height:12px;
+        height: 12px;
     }
 }
 
@@ -64,7 +64,6 @@
         .row .row dv-scalebar,
         .row .row .dv-sb {
             min-height: 300px;
-
         }
     }
 }
@@ -94,6 +93,7 @@ img.fr {
     justify-content: space-around;
 }
 
-.dv-sb.v {
+.row .row dv-scalebar,
+.row .row .dv-sb {
     min-height: 240px;
 }

@@ -7,7 +7,7 @@ The boolean attribute [`vertical`](/docs/vertical) changes the layout of the sca
 <dv-scalebar vertical colors="Viridis" labels="0,2,4,6,8,10" ticks="11"></dv-scalebar>
 <dv-scalebar vertical colors="Viridis" labels="low,medium,high" classes ticks></dv-scalebar>
 <dv-scalebar vertical colors="piYG" labels ticks="5"></dv-scalebar>
-<dv-scalebar vertical colors="piYG" labels="min,-1σ,0,1σ,max" classes="0,.16,.5,.84,1" ticks></dv-scalebar>
+<dv-scalebar vertical colors="piYG" labels="min,-1σ,0,1σ,max" classes="0,.34,.5,.66,1" ticks></dv-scalebar>
 ```
 
 **Result**
@@ -15,5 +15,5 @@ The boolean attribute [`vertical`](/docs/vertical) changes the layout of the sca
 <dv-scalebar vertical colors="Viridis" labels="0,2,4,6,8,10" ticks="11"></dv-scalebar>
 <dv-scalebar vertical colors="Viridis" labels="low,medium,high" classes ticks></dv-scalebar>
 <dv-scalebar vertical colors="piYG" labels ticks="5"></dv-scalebar>
-<dv-scalebar vertical colors="piYG" labels="min,-1σ,0,1σ,max" classes="0,.16,.5,.84,1" ticks></dv-scalebar>
+<dv-scalebar vertical colors="piYG" labels="min,-1σ,0,1σ,max" classes="0,.34,.5,.66,1" ticks></dv-scalebar>
 </div>
