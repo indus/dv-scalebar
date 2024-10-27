@@ -1,10 +1,10 @@
 import { defineComponent as O, h as p } from "vue";
-import N from "chroma-js";
+import L from "chroma-js";
 /**
  * @license
  * https://github.com/indus/dist/blob/main/dv-scalebar.vue.nochroma.licence.txt
  */
-const M = 42, E = [
+const G = 42, E = [
   "#30123b",
   "#4145ab",
   "#4675ed",
@@ -36,9 +36,9 @@ const M = 42, E = [
   0.857,
   0.929,
   1
-], T = (a, r = 0) => Array.isArray(a) ? a : Number.isInteger(a) ? Array(a + r).fill(a + r - 1).map(
+], $ = (a, r = 0) => Array.isArray(a) ? a : Number.isInteger(a) ? Array(a + r).fill(a + r - 1).map(
   (e, t) => t / Math.max(e, 1)
-) : (console.warn("expected prop to be 'number[]' or 'int'", a), []), $ = (a, r) => ((r ? 1 - a : a) * 100).toFixed(2) + "%", L = (a, r, e = r, t = !1) => [$(r), a(t ? 1 - e : e).hex()], u = (a, r = !1) => {
+) : (console.warn("expected prop to be 'number[]' or 'int'", a), []), C = (a, r) => ((r ? 1 - a : a) * 100).toFixed(2) + "%", w = (a, r, e = r, t = !1) => [C(r), a(t ? 1 - e : e).hex()], A = (a, r = !1) => {
   if (a === "" || a === !0) return !0;
   if (!a) return;
   let e = typeof a == "string" || a instanceof String ? a.startsWith("[") ? JSON.parse(a) : a.split(",") : Array.isArray(a) ? [...a] : [a];
@@ -50,82 +50,82 @@ const M = 42, E = [
     ticks: t,
     classes: s,
     vertical: n,
-    reverse: A,
+    reverse: u,
     flip: c,
-    before: g,
-    after: f,
-    colorReverse: m,
-    colorMode: w,
-    colorGamma: C,
-    colorCorrectLightness: _,
-    colorPadding: h,
-    colorClass: v,
-    centeredEdgeLabels: b
+    before: m,
+    after: b,
+    colorReverse: g,
+    colorMode: S,
+    colorGamma: x,
+    colorCorrectLightness: h,
+    colorPadding: f,
+    colorClass: M,
+    centeredEdgeLabels: k
   } = a;
-  r = u(r), e = u(e), t = u(t, !0), s = u(s, !0), h = u(h, !0), n = u(n), A = u(A), c = u(c), m = u(m), _ = u(_), e === !0 && (Array.isArray(t) ? e = [...t] : Array.isArray(s) && (e = [...s])), A ^ n && (Array.isArray(t) && (t = t.reverse().map((i) => 1 - i)), Array.isArray(s) && (s = s.reverse().map((i) => 1 - i)));
-  let y = null, B = null, x = null, P = null;
+  r = A(r), e = A(e), t = A(t, !0), s = A(s, !0), f = A(f, !0), n = A(n), u = A(u), c = A(c), g = A(g), h = A(h), e === !0 && (Array.isArray(t) ? e = [...t] : Array.isArray(s) && (e = [...s])), u ^ n && (Array.isArray(t) && (t = t.reverse().map((i) => 1 - i)), Array.isArray(s) && (s = s.reverse().map((i) => 1 - i)));
+  let y = null, T = null, _ = null, P = null;
   s === !0 && (t ? s = Array.isArray(t) ? t : t - 1 : Array.isArray(e) ? s = e == null ? void 0 : e.length : Array.isArray(r) && (s = r == null ? void 0 : r.length));
   let l;
-  if (r === !0 ? l = N.scale(E).domain(R) : r === void 0 ? r = ["#fff", "#000"] : Array.isArray(r) || (r = N.brewer[r] || ["#fff", r]), r !== !0 && A ^ n && (r = [...r].reverse()), l = l || N.scale(r), w && (l = l.mode(w)), C && (l = l.gamma(C)), _ && (l = l.correctLightness()), h && (l = l.padding(h)), s)
-    switch (v) {
+  if (r === !0 ? l = L.scale(E).domain(R) : r === void 0 ? r = ["#fff", "#000"] : Array.isArray(r) || (r = L.brewer[r] || ["#fff", r]), r !== !0 && u ^ n && (r = [...r].reverse()), l = l || L.scale(r), S && (l = l.mode(S)), x && (l = l.gamma(x)), h && (l = l.correctLightness()), f && (l = l.padding(f)), s)
+    switch (M) {
       case "average":
         l = l.domain([0, 1]);
         break;
       case "equal":
-        Array.isArray(s) || (s = T(s, 1)), l = l.classes([0, ...s, 1]);
+        Array.isArray(s) || (s = $(s, 1)), l = l.classes([0, ...s, 1]);
         break;
       default:
         l = l.classes(s);
         break;
     }
-  if (g === "" && (g = l(n ? 1 : 0).hex()), f === "" && (f = l(n ? 0 : 1).hex()), !s || Number(s) <= 1)
-    B = Array(M).fill(M - 1).map((i, o) => L(l, o / i, o / i, m));
+  if (m === "" && (m = l(n ? 1 : 0).hex()), b === "" && (b = l(n ? 0 : 1).hex()), !s || Number(s) <= 1)
+    T = Array(G).fill(G - 1).map((i, o) => w(l, o / i, o / i, g));
   else {
-    let i = T(s, 1);
+    let i = $(s, 1);
     if (Array.isArray(i)) {
       let o = i.length - 1;
-      B = i.reduce((d, k, S, I) => {
-        let F = I[S + 1], G = (k + F) / 2;
-        return S < o && S && d.push(L(l, k, G, m)), S < o - 1 && d.push(L(l, F, G, m)), d;
+      T = i.reduce((d, B, N, I) => {
+        let v = I[N + 1], F = (B + v) / 2;
+        return N < o && N && d.push(w(l, B, F, g)), N < o - 1 && d.push(w(l, v, F, g)), d;
       }, []), y = i;
     }
   }
   if (t !== void 0) {
     t === !0 && (Array.isArray(y) ? t = y : Array.isArray(e) ? t = e.length : t = 2);
-    let i = T(t);
-    Array.isArray(i) && (x = i.map((o) => $(o, n)), y = y || i, A ^ n && (x = x.reverse()));
+    let i = $(t);
+    Array.isArray(i) && (_ = i.map((o) => C(o, n)), y = y || i, u ^ n && (_ = _.reverse()));
   }
   if (e !== void 0) {
     if (e === !0)
       if (y) {
         let o = y.length - (s ? 1 : 0);
         e = Array(o).fill(Math.max(o - 1, 1)).map(
-          (d, k) => `${parseFloat((k / d).toFixed(2))}`
+          (d, B) => `${parseFloat((B / d).toFixed(2))}`
         );
       } else e = ["0", "1"];
-    Array.isArray(e) || (e = ["0", e]), A ^ n && Array.isArray(e) && (e = e.reverse());
+    Array.isArray(e) || (e = ["0", e]), u ^ n && Array.isArray(e) && (e = e.reverse());
     let i;
     switch (y && e.length - y.length) {
       case 0:
-        i = (o) => y[o], b = !1;
+        i = (o) => y[o], k = !1;
         break;
       case -1:
-        i = (o) => (y[o] + y[o + 1]) / 2, b = !0;
+        i = (o) => (y[o] + y[o + 1]) / 2, k = !0;
         break;
       default:
-        e.length > 1 ? (i = (o) => o / (e.length - 1), b = !1) : (i = () => 0.5, b = !0);
+        e.length > 1 ? (i = (o) => o / (e.length - 1), k = !1) : (i = () => 0.5, k = !0);
         break;
     }
-    P = e.map((o, d) => [$(n ? 1 - i(d) : i(d)), o]);
+    P = e.map((o, d) => [C(n ? 1 - i(d) : i(d)), o]);
   }
   return {
-    stops$: B,
-    ticks$: x,
+    stops$: T,
+    ticks$: _,
     labels$: P,
-    before: g,
-    after: f,
+    before: m,
+    after: b,
     vertical: n,
-    klass: `dv-sb${g ? " b" : ""}${f ? " a" : ""}${c ? " f" : ""}${n ? " v" : " h"}${b ? " c" : ""}`
+    klass: `dv-sb${m ? " b" : ""}${b ? " a" : ""}${c ? " f" : ""}${n ? " v" : " h"}${k ? " c" : ""}`
   };
 };
 let q = 0;
@@ -156,26 +156,27 @@ const z = O({
         ticks$: t,
         labels$: s,
         before: n,
-        after: A,
+        after: u,
         vertical: c,
-        klass: g
+        klass: m
       } = U(a);
+      let b = c ? 1 : 0, g = c ? 0 : 1, S = c ? "translate(-1,1) rotate(-90)" : "", x = c ? "100%" : 0, h = c ? 0 : "100%";
       return p("svg", {
-        class: g
+        class: m
       }, [
         p("defs", [
           p("line", {
             id: `tk${r}`,
             x1: 0,
             xy: 0,
-            x2: c ? 1 : 0,
-            y2: c ? 0 : 1
+            x2: b,
+            y2: g
           }),
           p(
             "linearGradient",
             {
               id: `lg${r}`,
-              gradientTransform: c ? "translate(-1,1) rotate(-90)" : null
+              gradientTransform: S
             },
             e == null ? void 0 : e.map(
               (f) => p("stop", { offset: f[0], "stop-color": f[1] })
@@ -185,10 +186,10 @@ const z = O({
         n ? p("rect", { class: "b", fill: n }) : null,
         p("rect", {
           fill: `url('#lg${r}')`,
-          width: c ? null : "100%",
-          height: c ? "100%" : null
+          width: x,
+          height: h
         }),
-        A ? p("rect", { class: "a", fill: A }) : null,
+        u ? p("rect", { class: "a", fill: u, y: x, x: h }) : null,
         t == null ? void 0 : t.map(
           (f) => p("use", {
             href: `#tk${r}`,
@@ -210,7 +211,7 @@ const z = O({
   for (const [t, s] of r)
     e[t] = s;
   return e;
-}, H = /* @__PURE__ */ D(z, [["__scopeId", "data-v-fada05ef"]]);
+}, H = /* @__PURE__ */ D(z, [["__scopeId", "data-v-f4af1ba2"]]);
 export {
   H as default
 };

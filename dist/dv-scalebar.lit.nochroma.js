@@ -43,7 +43,7 @@ const Ct = (i) => new Ht(typeof i == "string" ? i : i + "", void 0, Pt), Mt = (i
  * Copyright 2017 Google LLC
  * SPDX-License-Identifier: BSD-3-Clause
  */
-const { is: Rt, defineProperty: Lt, getOwnPropertyDescriptor: Dt, getOwnPropertyNames: Yt, getOwnPropertySymbols: jt, getPrototypeOf: It } = Object, C = globalThis, yt = C.trustedTypes, Bt = yt ? yt.emptyScript : "", et = C.reactiveElementPolyfillSupport, D = (i, t) => i, J = { toAttribute(i, t) {
+const { is: Rt, defineProperty: Lt, getOwnPropertyDescriptor: Dt, getOwnPropertyNames: jt, getOwnPropertySymbols: It, getPrototypeOf: Yt } = Object, C = globalThis, yt = C.trustedTypes, Bt = yt ? yt.emptyScript : "", et = C.reactiveElementPolyfillSupport, D = (i, t) => i, J = { toAttribute(i, t) {
   switch (t) {
     case Boolean:
       i = i ? Bt : null;
@@ -104,13 +104,13 @@ let O = class extends HTMLElement {
   }
   static _$Ei() {
     if (this.hasOwnProperty(D("elementProperties"))) return;
-    const t = It(this);
+    const t = Yt(this);
     t.finalize(), t.l !== void 0 && (this.l = [...t.l]), this.elementProperties = new Map(t.elementProperties);
   }
   static finalize() {
     if (this.hasOwnProperty(D("finalized"))) return;
     if (this.finalized = !0, this._$Ei(), this.hasOwnProperty(D("properties"))) {
-      const e = this.properties, s = [...Yt(e), ...jt(e)];
+      const e = this.properties, s = [...jt(e), ...It(e)];
       for (const r of s) this.createProperty(r, e[r]);
     }
     const t = this[Symbol.metadata];
@@ -277,7 +277,7 @@ O.elementStyles = [], O.shadowRootOptions = { mode: "open" }, O[D("elementProper
  * Copyright 2017 Google LLC
  * SPDX-License-Identifier: BSD-3-Clause
  */
-const Y = globalThis, K = Y.trustedTypes, mt = K ? K.createPolicy("lit-html", { createHTML: (i) => i }) : void 0, kt = "$lit$", P = `lit$${Math.random().toFixed(9).slice(2)}$`, Ut = "?" + P, Wt = `<${Ut}>`, T = document, I = () => T.createComment(""), B = (i) => i === null || typeof i != "object" && typeof i != "function", ht = Array.isArray, Vt = (i) => ht(i) || typeof (i == null ? void 0 : i[Symbol.iterator]) == "function", st = `[ 	
+const j = globalThis, K = j.trustedTypes, mt = K ? K.createPolicy("lit-html", { createHTML: (i) => i }) : void 0, kt = "$lit$", P = `lit$${Math.random().toFixed(9).slice(2)}$`, Ut = "?" + P, Wt = `<${Ut}>`, T = document, Y = () => T.createComment(""), B = (i) => i === null || typeof i != "object" && typeof i != "function", ht = Array.isArray, Vt = (i) => ht(i) || typeof (i == null ? void 0 : i[Symbol.iterator]) == "function", st = `[ 	
 \f\r]`, R = /<(?:(!--|\/[^a-zA-Z])|(\/?[a-zA-Z][^>\s]*)|(\/?$))/g, _t = /-->/g, At = />/g, k = RegExp(`>|${st}(?:([^\\s"'>=/]+)(${st}*=${st}*(?:[^ 	
 \f\r"'\`<>=]|("|')|))|$)`, "g"), bt = /'/g, xt = /"/g, Tt = /^(?:script|style|textarea|title)$/i, Ot = (i) => (t, ...e) => ({ _$litType$: i, strings: t, values: e }), qt = Ot(1), L = Ot(2), z = Symbol.for("lit-noChange"), $ = Symbol.for("lit-nothing"), Et = /* @__PURE__ */ new WeakMap(), U = T.createTreeWalker(T, 129);
 function zt(i, t) {
@@ -316,8 +316,8 @@ class W {
           const c = r.textContent.split(P), m = c.length - 1;
           if (m > 0) {
             r.textContent = K ? K.emptyScript : "";
-            for (let _ = 0; _ < m; _++) r.append(c[_], I()), U.nextNode(), n.push({ type: 2, index: ++o });
-            r.append(c[m], I());
+            for (let _ = 0; _ < m; _++) r.append(c[_], Y()), U.nextNode(), n.push({ type: 2, index: ++o });
+            r.append(c[m], Y());
           }
         }
       } else if (r.nodeType === 8) if (r.data === Ut) n.push({ type: 2, index: o });
@@ -416,7 +416,7 @@ class V {
     ht(this._$AH) || (this._$AH = [], this._$AR());
     const e = this._$AH;
     let s, r = 0;
-    for (const o of t) r === e.length ? e.push(s = new V(this.O(I()), this.O(I()), this, this.options)) : s = e[r], s._$AI(o), r++;
+    for (const o of t) r === e.length ? e.push(s = new V(this.O(Y()), this.O(Y()), this, this.options)) : s = e[r], s._$AI(o), r++;
     r < e.length && (this._$AR(s && s._$AB.nextSibling, r), e.length = r);
   }
   _$AR(t = this._$AA.nextSibling, e) {
@@ -497,14 +497,14 @@ class Zt {
     N(this, t);
   }
 }
-const rt = Y.litHtmlPolyfillSupport;
-rt == null || rt(W, V), (Y.litHtmlVersions ?? (Y.litHtmlVersions = [])).push("3.2.1");
+const rt = j.litHtmlPolyfillSupport;
+rt == null || rt(W, V), (j.litHtmlVersions ?? (j.litHtmlVersions = [])).push("3.2.1");
 const Qt = (i, t, e) => {
   const s = (e == null ? void 0 : e.renderBefore) ?? t;
   let r = s._$litPart$;
   if (r === void 0) {
     const o = (e == null ? void 0 : e.renderBefore) ?? null;
-    s._$litPart$ = r = new V(t.insertBefore(I(), o), o, void 0, e ?? {});
+    s._$litPart$ = r = new V(t.insertBefore(Y(), o), o, void 0, e ?? {});
   }
   return r._$AI(i), r;
 };
@@ -513,7 +513,7 @@ const Qt = (i, t, e) => {
  * Copyright 2017 Google LLC
  * SPDX-License-Identifier: BSD-3-Clause
  */
-let j = class extends O {
+let I = class extends O {
   constructor() {
     super(...arguments), this.renderOptions = { host: this }, this._$Do = void 0;
   }
@@ -539,9 +539,9 @@ let j = class extends O {
   }
 };
 var St;
-j._$litElement$ = !0, j.finalized = !0, (St = globalThis.litElementHydrateSupport) == null || St.call(globalThis, { LitElement: j });
+I._$litElement$ = !0, I.finalized = !0, (St = globalThis.litElementHydrateSupport) == null || St.call(globalThis, { LitElement: I });
 const it = globalThis.litElementPolyfillSupport;
-it == null || it({ LitElement: j });
+it == null || it({ LitElement: I });
 (globalThis.litElementVersions ?? (globalThis.litElementVersions = [])).push("4.1.1");
 /**
  * @license
@@ -708,14 +708,14 @@ const wt = 42, re = [
     vertical: o,
     klass: `dv-sb${n ? " b" : ""}${h ? " a" : ""}${l ? " f" : ""}${o ? " v" : " h"}${M ? " c" : ""}`
   };
-}, ae = ".dv-sb{--s: var(--scalebar-size, 14);--f: var(--label-font, calc(var(--bz) * .9) monospace);--f0: var(--label-font0, var(--f));--f1: var(--label-font1, var(--f0));--sz: var(--container-size, calc(var(--s) * 2px));--bz: var(--bar-size, calc(var(--sz) / 2));--bo: var(--bar-offset);--tc: var(--tick-color, currentColor);--tc0: var(--tick-color0, var(--tc));--tc1: var(--tick-color1, var(--tc0));--tw: var(--tick-width, 2px);--tw0: var(--tick-width0, var(--tw));--tw1: var(--tick-width1, var(--tw0));--ts: var(--tick-size, var(--s));--ts0: var(--tick-size0, calc(var(--ts) * 1.7));--ts1: var(--tick-size1, var(--ts0));--to: var(--tick-offset, 0px);--to0: var(--tick-offset0, var(--to));--to1: var(--tick-offset1, var(--to0));--lc: var(--label-color, currentColor);--lc0: var(--label-color0, var(--lc));--lc1: var(--label-color1, var(--lc0));--lo: var(--label-offset, var(--bz));--lo0: var(--label-offset0, var(--lo));--lo1: var(--label-offset1, var(--lo0));--li: var(--label-indent, 0px);--li0: var(--label-indent0, var(--li));--li1: var(--label-indent1, calc(var(--li0) * -1));--_: calc(var(--sz) - var(--bz));--_to: calc((var(--to)*-1) + (var(--sz) - var(--ts)*1px));--_to0: calc((var(--to0)*-1) + (var(--sz) - var(--ts0)*1px));--_to1: calc((var(--to1)*-1) + (var(--_to0)))}svg{overflow:visible;width:100%;height:var(--sz)}svg rect{width:100%;height:var(--bz);transform:translateY(var(--bo))}svg rect.b{transform:translate(calc(var(--bz)*-1))}svg rect.a{transform:translate(100%)}svg.f rect{transform:translateY(var(--bo, var(--_)))}svg.v{width:var(--sz);height:100%}svg.v rect{width:var(--bz);height:100%;transform:translate(var(--bo))}svg.v rect.b{transform:translateY(calc(var(--bz)*-1))}svg.v rect.a{transform:translateY(100%)}svg.f.v rect{transform:translate(var(--bo, var(--_)))}svg rect.b,svg rect.a{height:var(--bz);width:var(--bz)}svg use{stroke:var(--tc);stroke-width:var(--tw);transform:translateY(var(--to)) scaleY(var(--ts))}svg use:first-of-type{stroke:var(--tc0);stroke-width:var(--tw0)}svg use:last-of-type{stroke:var(--tc1);stroke-width:var(--tw1)}svg use:last-of-type{transform:translateY(var(--to1)) scaleY(var(--ts1))}svg use:first-of-type{transform:translateY(var(--to0)) scaleY(var(--ts0))}svg.f use{transform:translateY(var(--_to)) scaleY(var(--ts))}svg.f use:last-of-type{transform:translateY(var(--_to1)) scaleY(var(--ts1))}svg.f use:first-of-type{transform:translateY(var(--_to0)) scaleY(var(--ts0))}svg.v use{transform:translate(var(--to)) scaleX(var(--ts))}svg.v use:last-of-type{transform:translate(var(--to1)) scaleX(var(--ts1))}svg.v use:first-of-type{transform:translate(var(--to0)) scaleX(var(--ts0))}svg.v.f use{transform:translate(var(--_to)) scaleX(var(--ts))}svg.v.f use:last-of-type{transform:translate(var(--_to1)) scaleX(var(--ts1))}svg.v.f use:first-of-type{transform:translate(var(--_to0)) scaleX(var(--ts0))}svg text{fill:var(--lc);font:var(--f)}svg text:last-of-type{font:var(--f1);fill:var(--lc1)}svg text:first-of-type{font:var(--f0);fill:var(--lc0)}svg.h text{text-anchor:middle;dominant-baseline:text-before-edge;transform:translate(var(--li),var(--lo))}svg.h text:last-of-type{transform:translate(calc(var(--li1) - .3em),var(--lo1))}svg.h text:first-of-type{transform:translate(calc(var(--li0) + .3em),var(--lo0))}svg.h:not(.c) text:last-of-type{text-anchor:end}svg.h:not(.c) text:first-of-type{text-anchor:start}svg.h.f text{dominant-baseline:text-after-edge}svg.v text{text-anchor:start;dominant-baseline:central;transform:translate(calc(var(--lo) + .3em),var(--li))}svg.v text:last-of-type{transform:translate(calc(var(--lo) + .3em),calc(-1*var(--li1)))}svg.v text:first-of-type{transform:translate(calc(var(--lo) + .3em),calc(-1*var(--li0)))}svg.v:not(.c) text:last-of-type{dominant-baseline:text-before-edge}svg.v:not(.c) text:first-of-type{dominant-baseline:text-after-edge}svg.v:not(.c).f text:last-of-type{transform:translate(calc(var(--lo) - .3em),calc(-1*var(--li1)))}svg.v:not(.c).f text:first-of-type{transform:translate(calc(var(--lo) - .3em),calc(-1*var(--li0)))}svg.v.f text{text-anchor:end;transform:translate(calc(var(--lo) - .3em),var(--li))}";
+}, ae = ".dv-sb{--s: var(--scalebar-size, 14);--f: var(--label-font, calc(var(--bz) * .9) monospace);--f0: var(--label-font0, var(--f));--f1: var(--label-font1, var(--f0));--sz: var(--container-size, calc(var(--s) * 2px));--bz: var(--bar-size, calc(var(--sz) / 2));--bo: var(--bar-offset);--tc: var(--tick-color, currentColor);--tc0: var(--tick-color0, var(--tc));--tc1: var(--tick-color1, var(--tc0));--tw: var(--tick-width, 2px);--tw0: var(--tick-width0, var(--tw));--tw1: var(--tick-width1, var(--tw0));--ts: var(--tick-size, var(--s));--ts0: var(--tick-size0, calc(var(--ts) * 1.7));--ts1: var(--tick-size1, var(--ts0));--to: var(--tick-offset, 0px);--to0: var(--tick-offset0, var(--to));--to1: var(--tick-offset1, var(--to0));--lc: var(--label-color, currentColor);--lc0: var(--label-color0, var(--lc));--lc1: var(--label-color1, var(--lc0));--lo: var(--label-offset, var(--bz));--lo0: var(--label-offset0, var(--lo));--lo1: var(--label-offset1, var(--lo0));--li: var(--label-indent, 0px);--li0: var(--label-indent0, var(--li));--li1: var(--label-indent1, calc(var(--li0) * -1));--_: calc(var(--sz) - var(--bz));--_to: calc((var(--to)*-1) + (var(--sz) - var(--ts)*1px));--_to0: calc((var(--to0)*-1) + (var(--sz) - var(--ts0)*1px));--_to1: calc((var(--to1)*-1) + (var(--_to0)))}svg{display:block;overflow:visible;width:100%;height:var(--sz)}svg rect{width:100%;height:var(--bz);transform:translateY(var(--bo))}svg rect.b{transform:translate(calc(var(--bz)*-1))}svg.f rect{transform:translateY(var(--bo, var(--_)))}svg.v{width:var(--sz);height:100%}svg.v rect{width:var(--bz);height:100%;transform:translate(var(--bo))}svg.v rect.b{transform:translateY(calc(var(--bz)*-1))}svg.f.v rect{transform:translate(var(--bo, var(--_)))}svg rect.b,svg rect.a{height:var(--bz);width:var(--bz)}svg use{stroke:var(--tc);stroke-width:var(--tw);transform:translateY(var(--to)) scaleY(var(--ts))}svg use:first-of-type{stroke:var(--tc0);stroke-width:var(--tw0)}svg use:last-of-type{stroke:var(--tc1);stroke-width:var(--tw1)}svg use:last-of-type{transform:translateY(var(--to1)) scaleY(var(--ts1))}svg use:first-of-type{transform:translateY(var(--to0)) scaleY(var(--ts0))}svg.f use{transform:translateY(var(--_to)) scaleY(var(--ts))}svg.f use:last-of-type{transform:translateY(var(--_to1)) scaleY(var(--ts1))}svg.f use:first-of-type{transform:translateY(var(--_to0)) scaleY(var(--ts0))}svg.v use{transform:translate(var(--to)) scaleX(var(--ts))}svg.v use:last-of-type{transform:translate(var(--to1)) scaleX(var(--ts1))}svg.v use:first-of-type{transform:translate(var(--to0)) scaleX(var(--ts0))}svg.v.f use{transform:translate(var(--_to)) scaleX(var(--ts))}svg.v.f use:last-of-type{transform:translate(var(--_to1)) scaleX(var(--ts1))}svg.v.f use:first-of-type{transform:translate(var(--_to0)) scaleX(var(--ts0))}svg text{fill:var(--lc);font:var(--f)}svg text:last-of-type{font:var(--f1);fill:var(--lc1)}svg text:first-of-type{font:var(--f0);fill:var(--lc0)}svg.h text{text-anchor:middle;dominant-baseline:text-before-edge;transform:translate(var(--li),var(--lo))}svg.h text:last-of-type{transform:translate(calc(var(--li1) - .3em),var(--lo1))}svg.h text:first-of-type{transform:translate(calc(var(--li0) + .3em),var(--lo0))}svg.h:not(.c) text:last-of-type{text-anchor:end}svg.h:not(.c) text:first-of-type{text-anchor:start}svg.h.f text{dominant-baseline:text-after-edge}svg.v text{text-anchor:start;dominant-baseline:central;transform:translate(calc(var(--lo) + .3em),var(--li))}svg.v text:last-of-type{transform:translate(calc(var(--lo) + .3em),calc(-1*var(--li1)))}svg.v text:first-of-type{transform:translate(calc(var(--lo) + .3em),calc(-1*var(--li0)))}svg.v:not(.c) text:last-of-type{dominant-baseline:text-before-edge}svg.v:not(.c) text:first-of-type{dominant-baseline:text-after-edge}svg.v:not(.c).f text:last-of-type{transform:translate(calc(var(--lo) - .3em),calc(-1*var(--li1)))}svg.v:not(.c).f text:first-of-type{transform:translate(calc(var(--lo) - .3em),calc(-1*var(--li0)))}svg.v.f text{text-anchor:end;transform:translate(calc(var(--lo) - .3em),var(--li))}";
 var ne = Object.defineProperty, le = Object.getOwnPropertyDescriptor, y = (i, t, e, s) => {
   for (var r = s > 1 ? void 0 : s ? le(t, e) : t, o = i.length - 1, a; o >= 0; o--)
     (a = i[o]) && (r = (s ? a(t, e, r) : a(r)) || r);
   return s && r && ne(t, e, r), r;
 };
 const pt = { attribute: !0, reflect: !0 }, H = { type: Boolean, ...pt }, w = { type: String, ...pt }, ce = { type: Number, ...pt };
-let u = class extends j {
+let u = class extends I {
   render() {
     let {
       stops$: i,
@@ -739,9 +739,9 @@ let u = class extends j {
   ${m}
   </linearGradient>
 </defs>
-${s ? L`<rect class="b" fill="${s}"/>` : null}
+${s ? L`<rect class="b" fill="${s}" />` : null}
 <rect fill="url('#lg')" width="${p}" height="${c}" />
-${r ? L`<rect class="a" fill="${r}"/>` : null}
+${r ? L`<rect class="a" fill="${r}" y="${p}" x="${c}"/>` : null}
 ${_}
 ${b}
 </svg>

@@ -1,4 +1,4 @@
-import { defineComponent as Tt, h as I } from "vue";
+import { defineComponent as qt, h as I } from "vue";
 /**
  * @license
  * https://github.com/indus/dist/blob/main/dv-scalebar.vue.licence.txt
@@ -378,13 +378,13 @@ const Xe = (...e) => {
   const [t, n, r] = e, [o, s, c] = Vt(t, n, r), [f, a, i] = pt(o, s, c);
   return [f, a, i, e.length > 3 ? e[3] : 1];
 }, Vt = (e, t, n) => {
-  const { kE: r, kK: o, kKE: s, Xn: c, Yn: f, Zn: a } = W, i = (e + 16) / 116, b = 2e-3 * t + i, d = i - 5e-3 * n, h = b * b * b, g = d * d * d, _ = h > r ? h : (116 * b - 16) / o, C = e > s ? Math.pow((e + 16) / 116, 3) : e / o, y = g > r ? g : (116 * d - 16) / o, m = _ * c, S = C * f, P = y * a;
+  const { kE: r, kK: o, kKE: s, Xn: c, Yn: f, Zn: a } = W, i = (e + 16) / 116, b = 2e-3 * t + i, d = i - 5e-3 * n, h = b * b * b, g = d * d * d, y = h > r ? h : (116 * b - 16) / o, C = e > s ? Math.pow((e + 16) / 116, 3) : e / o, w = g > r ? g : (116 * d - 16) / o, m = y * c, S = C * f, P = w * a;
   return [m, S, P];
 }, $e = (e) => {
   const t = Math.sign(e);
   return e = Math.abs(e), (e <= 31308e-7 ? e * 12.92 : 1.055 * Math.pow(e, 1 / 2.4) - 0.055) * t;
 }, pt = (e, t, n) => {
-  const { MtxAdaptMa: r, MtxAdaptMaI: o, MtxXYZ2RGB: s, RefWhiteRGB: c, Xn: f, Yn: a, Zn: i } = W, b = f * r.m00 + a * r.m10 + i * r.m20, d = f * r.m01 + a * r.m11 + i * r.m21, h = f * r.m02 + a * r.m12 + i * r.m22, g = c.X * r.m00 + c.Y * r.m10 + c.Z * r.m20, _ = c.X * r.m01 + c.Y * r.m11 + c.Z * r.m21, C = c.X * r.m02 + c.Y * r.m12 + c.Z * r.m22, y = (e * r.m00 + t * r.m10 + n * r.m20) * (g / b), m = (e * r.m01 + t * r.m11 + n * r.m21) * (_ / d), S = (e * r.m02 + t * r.m12 + n * r.m22) * (C / h), P = y * o.m00 + m * o.m10 + S * o.m20, j = y * o.m01 + m * o.m11 + S * o.m21, $ = y * o.m02 + m * o.m12 + S * o.m22, x = $e(
+  const { MtxAdaptMa: r, MtxAdaptMaI: o, MtxXYZ2RGB: s, RefWhiteRGB: c, Xn: f, Yn: a, Zn: i } = W, b = f * r.m00 + a * r.m10 + i * r.m20, d = f * r.m01 + a * r.m11 + i * r.m21, h = f * r.m02 + a * r.m12 + i * r.m22, g = c.X * r.m00 + c.Y * r.m10 + c.Z * r.m20, y = c.X * r.m01 + c.Y * r.m11 + c.Z * r.m21, C = c.X * r.m02 + c.Y * r.m12 + c.Z * r.m22, w = (e * r.m00 + t * r.m10 + n * r.m20) * (g / b), m = (e * r.m01 + t * r.m11 + n * r.m21) * (y / d), S = (e * r.m02 + t * r.m12 + n * r.m22) * (C / h), P = w * o.m00 + m * o.m10 + S * o.m20, j = w * o.m01 + m * o.m11 + S * o.m21, $ = w * o.m02 + m * o.m12 + S * o.m22, x = $e(
     P * s.m00 + j * s.m10 + $ * s.m20
   ), l = $e(
     P * s.m01 + j * s.m11 + $ * s.m21
@@ -392,7 +392,7 @@ const Xe = (...e) => {
     P * s.m02 + j * s.m12 + $ * s.m22
   );
   return [x * 255, l * 255, p * 255];
-}, qe = (...e) => {
+}, Te = (...e) => {
   const [t, n, r, ...o] = M(e, "rgb"), [s, c, f] = mt(t, n, r), [a, i, b] = Jt(s, c, f);
   return [a, i, b, ...o.length > 0 && o[0] < 1 ? [o[0]] : []];
 };
@@ -407,13 +407,13 @@ function xe(e) {
 const mt = (e, t, n) => {
   e = xe(e / 255), t = xe(t / 255), n = xe(n / 255);
   const { MtxRGB2XYZ: r, MtxAdaptMa: o, MtxAdaptMaI: s, Xn: c, Yn: f, Zn: a, As: i, Bs: b, Cs: d } = W;
-  let h = e * r.m00 + t * r.m10 + n * r.m20, g = e * r.m01 + t * r.m11 + n * r.m21, _ = e * r.m02 + t * r.m12 + n * r.m22;
-  const C = c * o.m00 + f * o.m10 + a * o.m20, y = c * o.m01 + f * o.m11 + a * o.m21, m = c * o.m02 + f * o.m12 + a * o.m22;
-  let S = h * o.m00 + g * o.m10 + _ * o.m20, P = h * o.m01 + g * o.m11 + _ * o.m21, j = h * o.m02 + g * o.m12 + _ * o.m22;
-  return S *= C / i, P *= y / b, j *= m / d, h = S * s.m00 + P * s.m10 + j * s.m20, g = S * s.m01 + P * s.m11 + j * s.m21, _ = S * s.m02 + P * s.m12 + j * s.m22, [h, g, _];
+  let h = e * r.m00 + t * r.m10 + n * r.m20, g = e * r.m01 + t * r.m11 + n * r.m21, y = e * r.m02 + t * r.m12 + n * r.m22;
+  const C = c * o.m00 + f * o.m10 + a * o.m20, w = c * o.m01 + f * o.m11 + a * o.m21, m = c * o.m02 + f * o.m12 + a * o.m22;
+  let S = h * o.m00 + g * o.m10 + y * o.m20, P = h * o.m01 + g * o.m11 + y * o.m21, j = h * o.m02 + g * o.m12 + y * o.m22;
+  return S *= C / i, P *= w / b, j *= m / d, h = S * s.m00 + P * s.m10 + j * s.m20, g = S * s.m01 + P * s.m11 + j * s.m21, y = S * s.m02 + P * s.m12 + j * s.m22, [h, g, y];
 };
 u.prototype.lab = function() {
-  return qe(this._rgb);
+  return Te(this._rgb);
 };
 const Qt = (...e) => new u(...e, "lab");
 Object.assign(E, { lab: Qt, getLabWhitePoint: ie, setLabWhitePoint: D });
@@ -477,19 +477,19 @@ u.prototype.premultiply = function(e = !1) {
 const { sin: on, cos: sn } = Math, gt = (...e) => {
   let [t, n, r] = M(e, "lch");
   return isNaN(r) && (r = 0), r = r * Kt, [t, sn(r) * n, on(r) * n];
-}, Te = (...e) => {
+}, qe = (...e) => {
   e = M(e, "lch");
   const [t, n, r] = e, [o, s, c] = gt(t, n, r), [f, a, i] = Xe(o, s, c);
   return [f, a, i, e.length > 3 ? e[3] : 1];
 }, cn = (...e) => {
   const t = bt(M(e, "hcl"));
-  return Te(...t);
+  return qe(...t);
 }, { sqrt: fn, atan2: an, round: ln } = Math, yt = (...e) => {
   const [t, n, r] = M(e, "lab"), o = fn(n * n + r * r);
   let s = (an(r, n) * Wt + 360) % 360;
   return ln(o * 1e4) === 0 && (s = Number.NaN), [t, o, s];
 }, Ze = (...e) => {
-  const [t, n, r, ...o] = M(e, "rgb"), [s, c, f] = qe(t, n, r), [a, i, b] = yt(s, c, f);
+  const [t, n, r, ...o] = M(e, "rgb"), [s, c, f] = Te(t, n, r), [a, i, b] = yt(s, c, f);
   return [a, i, b, ...o.length > 0 && o[0] < 1 ? [o[0]] : []];
 };
 u.prototype.lch = function() {
@@ -500,7 +500,7 @@ u.prototype.hcl = function() {
 };
 const un = (...e) => new u(...e, "lch"), bn = (...e) => new u(...e, "hcl");
 Object.assign(E, { lch: un, hcl: bn });
-A.format.lch = Te;
+A.format.lch = qe;
 A.format.hcl = cn;
 ["lch", "hcl"].forEach(
   (e) => A.autodetect.push({
@@ -592,8 +592,8 @@ const ce = (e, t, n, r) => {
   r === "hsl" ? (o = e.hsl(), s = t.hsl()) : r === "hsv" ? (o = e.hsv(), s = t.hsv()) : r === "hcg" ? (o = e.hcg(), s = t.hcg()) : r === "hsi" ? (o = e.hsi(), s = t.hsi()) : r === "lch" || r === "hcl" ? (r = "hcl", o = e.hcl(), s = t.hcl()) : r === "oklch" && (o = e.oklch().reverse(), s = t.oklch().reverse());
   let c, f, a, i, b, d;
   (r.substr(0, 1) === "h" || r === "oklch") && ([c, a, b] = o, [f, i, d] = s);
-  let h, g, _, C;
-  return !isNaN(c) && !isNaN(f) ? (f > c && f - c > 180 ? C = f - (c + 360) : f < c && c - f > 180 ? C = f + 360 - c : C = f - c, g = c + n * C) : isNaN(c) ? isNaN(f) ? g = Number.NaN : (g = f, (b == 1 || b == 0) && r != "hsv" && (h = i)) : (g = c, (d == 1 || d == 0) && r != "hsv" && (h = a)), h === void 0 && (h = a + n * (i - a)), _ = b + n * (d - b), r === "oklch" ? new u([_, h, g], r) : new u([g, h, _], r);
+  let h, g, y, C;
+  return !isNaN(c) && !isNaN(f) ? (f > c && f - c > 180 ? C = f - (c + 360) : f < c && c - f > 180 ? C = f + 360 - c : C = f - c, g = c + n * C) : isNaN(c) ? isNaN(f) ? g = Number.NaN : (g = f, (b == 1 || b == 0) && r != "hsv" && (h = i)) : (g = c, (d == 1 || d == 0) && r != "hsv" && (h = a)), h === void 0 && (h = a + n * (i - a)), y = b + n * (d - b), r === "oklch" ? new u([y, h, g], r) : new u([g, h, y], r);
 }, wt = (e, t, n) => ce(e, t, n, "lch");
 G.lch = wt;
 G.hcl = wt;
@@ -802,10 +802,10 @@ function ge(e, t) {
 }
 const Ie = (...e) => {
   e = M(e, "lab");
-  const [t, n, r, ...o] = e, [s, c, f] = qn([t, n, r]), [a, i, b] = pt(s, c, f);
+  const [t, n, r, ...o] = e, [s, c, f] = Tn([t, n, r]), [a, i, b] = pt(s, c, f);
   return [a, i, b, ...o.length > 0 && o[0] < 1 ? [o[0]] : []];
 };
-function qn(e) {
+function Tn(e) {
   var t = [
     [1.2268798758459243, -0.5578149944602171, 0.2813910456659647],
     [-0.0405757452148008, 1.112286803280317, -0.0717110580655164],
@@ -822,9 +822,9 @@ function qn(e) {
 }
 const Ke = (...e) => {
   const [t, n, r, ...o] = M(e, "rgb"), s = mt(t, n, r);
-  return [...Tn(s), ...o.length > 0 && o[0] < 1 ? [o[0]] : []];
+  return [...qn(s), ...o.length > 0 && o[0] < 1 ? [o[0]] : []];
 };
-function Tn(e) {
+function qn(e) {
   const t = [
     [0.819022437996703, 0.3619062600528904, -0.1288737815209879],
     [0.0329836539323885, 0.9292868615863434, 0.0361446663506424],
@@ -885,13 +885,13 @@ const { pow: Ee, sqrt: Re, PI: Ce, cos: De, sin: Ue, atan2: Wn } = Math, Fn = (e
   e.forEach((d, h) => {
     const g = d.get(t);
     b += d.alpha() * n[h + 1];
-    for (let _ = 0; _ < c.length; _++)
-      if (!isNaN(g[_]))
-        if (f[_] += n[h + 1], t.charAt(_) === "h") {
-          const C = g[_] / 180 * Ce;
+    for (let y = 0; y < c.length; y++)
+      if (!isNaN(g[y]))
+        if (f[y] += n[h + 1], t.charAt(y) === "h") {
+          const C = g[y] / 180 * Ce;
           a += De(C) * n[h + 1], i += Ue(C) * n[h + 1];
         } else
-          c[_] += g[_] * n[h + 1];
+          c[y] += g[y] * n[h + 1];
   });
   for (let d = 0; d < c.length; d++)
     if (t.charAt(d) === "h") {
@@ -911,8 +911,8 @@ const { pow: Ee, sqrt: Re, PI: Ce, cos: De, sin: Ue, atan2: Wn } = Math, Fn = (e
   return r[0] = Re(r[0]), r[1] = Re(r[1]), r[2] = Re(r[2]), r[3] > 0.9999999 && (r[3] = 1), new u(Ye(r));
 }, { pow: Dn } = Math;
 function ye(e) {
-  let t = "rgb", n = E("#ccc"), r = 0, o = [0, 1], s = [], c = [0, 0], f = !1, a = [], i = !1, b = 0, d = 1, h = !1, g = {}, _ = !0, C = 1;
-  const y = function(l) {
+  let t = "rgb", n = E("#ccc"), r = 0, o = [0, 1], s = [], c = [0, 0], f = !1, a = [], i = !1, b = 0, d = 1, h = !1, g = {}, y = !0, C = 1;
+  const w = function(l) {
     if (l = l || ["#fff", "#000"], l && R(l) === "string" && E.brewer && E.brewer[l.toLowerCase()] && (l = E.brewer[l.toLowerCase()]), R(l) === "array") {
       l.length === 1 && (l = [l[0], l[0]]), l = l.slice(0);
       for (let p = 0; p < l.length; p++)
@@ -925,51 +925,51 @@ function ye(e) {
   }, m = function(l) {
     if (f != null) {
       const p = f.length - 1;
-      let k = 0;
-      for (; k < p && l >= f[k]; )
-        k++;
-      return k - 1;
+      let _ = 0;
+      for (; _ < p && l >= f[_]; )
+        _++;
+      return _ - 1;
     }
     return 0;
   };
   let S = (l) => l, P = (l) => l;
   const j = function(l, p) {
-    let k, w;
+    let _, k;
     if (p == null && (p = !1), isNaN(l) || l === null)
       return n;
-    p ? w = l : f && f.length > 2 ? w = m(l) / (f.length - 2) : d !== b ? w = (l - b) / (d - b) : w = 1, w = P(w), p || (w = S(w)), C !== 1 && (w = Dn(w, C)), w = c[0] + w * (1 - c[0] - c[1]), w = Q(w, 0, 1);
-    const L = Math.floor(w * 1e4);
-    if (_ && g[L])
-      k = g[L];
+    p ? k = l : f && f.length > 2 ? k = m(l) / (f.length - 2) : d !== b ? k = (l - b) / (d - b) : k = 1, k = P(k), p || (k = S(k)), C !== 1 && (k = Dn(k, C)), k = c[0] + k * (1 - c[0] - c[1]), k = Q(k, 0, 1);
+    const L = Math.floor(k * 1e4);
+    if (y && g[L])
+      _ = g[L];
     else {
       if (R(a) === "array")
         for (let N = 0; N < s.length; N++) {
           const v = s[N];
-          if (w <= v) {
-            k = a[N];
+          if (k <= v) {
+            _ = a[N];
             break;
           }
-          if (w >= v && N === s.length - 1) {
-            k = a[N];
+          if (k >= v && N === s.length - 1) {
+            _ = a[N];
             break;
           }
-          if (w > v && w < s[N + 1]) {
-            w = (w - v) / (s[N + 1] - v), k = E.interpolate(
+          if (k > v && k < s[N + 1]) {
+            k = (k - v) / (s[N + 1] - v), _ = E.interpolate(
               a[N],
               a[N + 1],
-              w,
+              k,
               t
             );
             break;
           }
         }
-      else R(a) === "function" && (k = a(w));
-      _ && (g[L] = k);
+      else R(a) === "function" && (_ = a(k));
+      y && (g[L] = _);
     }
-    return k;
+    return _;
   };
   var $ = () => g = {};
-  y(e);
+  w(e);
   const x = function(l) {
     const p = E(j(l));
     return i && p[i] ? p[i]() : p;
@@ -991,19 +991,19 @@ function ye(e) {
     b = l[0], d = l[l.length - 1], s = [];
     const p = a.length;
     if (l.length === p && b !== d)
-      for (let k of Array.from(l))
-        s.push((k - b) / (d - b));
+      for (let _ of Array.from(l))
+        s.push((_ - b) / (d - b));
     else {
-      for (let k = 0; k < p; k++)
-        s.push(k / (p - 1));
+      for (let _ = 0; _ < p; _++)
+        s.push(_ / (p - 1));
       if (l.length > 2) {
-        const k = l.map((L, N) => N / (l.length - 1)), w = l.map((L) => (L - b) / (d - b));
-        w.every((L, N) => k[N] === L) || (P = (L) => {
+        const _ = l.map((L, N) => N / (l.length - 1)), k = l.map((L) => (L - b) / (d - b));
+        k.every((L, N) => _[N] === L) || (P = (L) => {
           if (L <= 0 || L >= 1) return L;
           let N = 0;
-          for (; L >= w[N + 1]; ) N++;
-          const v = (L - w[N]) / (w[N + 1] - w[N]);
-          return k[N] + v * (k[N + 1] - k[N]);
+          for (; L >= k[N + 1]; ) N++;
+          const v = (L - k[N]) / (k[N + 1] - k[N]);
+          return _[N] + v * (_[N + 1] - _[N]);
         });
       }
     }
@@ -1011,16 +1011,16 @@ function ye(e) {
   }, x.mode = function(l) {
     return arguments.length ? (t = l, $(), x) : t;
   }, x.range = function(l, p) {
-    return y(l), x;
+    return w(l), x;
   }, x.out = function(l) {
     return i = l, x;
   }, x.spread = function(l) {
     return arguments.length ? (r = l, x) : r;
   }, x.correctLightness = function(l) {
     return l == null && (l = !0), h = l, $(), h ? S = function(p) {
-      const k = j(0, !0).lab()[0], w = j(1, !0).lab()[0], L = k > w;
+      const _ = j(0, !0).lab()[0], k = j(1, !0).lab()[0], L = _ > k;
       let N = j(p, !0).lab()[0];
-      const v = k + (w - k) * p;
+      const v = _ + (k - _) * p;
       let Z = N - v, le = 0, ue = 1, be = 20;
       for (; Math.abs(Z) > 0.01 && be-- > 0; )
         (function() {
@@ -1032,29 +1032,29 @@ function ye(e) {
     return l != null ? (R(l) === "number" && (l = [l, l]), c = l, x) : c;
   }, x.colors = function(l, p) {
     arguments.length < 2 && (p = "hex");
-    let k = [];
+    let _ = [];
     if (arguments.length === 0)
-      k = a.slice(0);
+      _ = a.slice(0);
     else if (l === 1)
-      k = [x(0.5)];
+      _ = [x(0.5)];
     else if (l > 1) {
-      const w = o[0], L = o[1] - w;
-      k = Un(0, l).map(
-        (N) => x(w + N / (l - 1) * L)
+      const k = o[0], L = o[1] - k;
+      _ = Un(0, l).map(
+        (N) => x(k + N / (l - 1) * L)
       );
     } else {
       e = [];
-      let w = [];
+      let k = [];
       if (f && f.length > 2)
         for (let L = 1, N = f.length, v = 1 <= N; v ? L < N : L > N; v ? L++ : L--)
-          w.push((f[L - 1] + f[L]) * 0.5);
+          k.push((f[L - 1] + f[L]) * 0.5);
       else
-        w = o;
-      k = w.map((L) => x(L));
+        k = o;
+      _ = k.map((L) => x(L));
     }
-    return E[p] && (k = k.map((w) => w[p]())), k;
+    return E[p] && (_ = _.map((k) => k[p]())), _;
   }, x.cache = function(l) {
-    return l != null ? (_ = l, x) : _;
+    return l != null ? (y = l, x) : y;
   }, x.gamma = function(l) {
     return l != null ? (C = l, x) : C;
   }, x.nodata = function(l) {
@@ -1103,7 +1103,7 @@ const Vn = function(e) {
     s = e.map((a) => a.lab()), f = e.length - 1, c = Vn(f), t = function(a) {
       const i = 1 - a, b = [0, 1, 2].map(
         (d) => s.reduce(
-          (h, g, _) => h + c[_] * i ** (f - _) * a ** _ * g[d],
+          (h, g, y) => h + c[y] * i ** (f - y) * a ** y * g[d],
           0
         )
       );
@@ -1135,10 +1135,10 @@ A.autodetect.push({
       return "rgb";
   }
 });
-const T = (e, t, n) => {
-  if (!T[n])
+const q = (e, t, n) => {
+  if (!q[n])
     throw new Error("unknown blend mode " + n);
-  return T[n](e, t);
+  return q[n](e, t);
 }, V = (e) => (t, n) => {
   const r = E(n).rgb(), o = E(t).rgb();
   return E.rgb(e(r, o));
@@ -1146,21 +1146,21 @@ const T = (e, t, n) => {
   const r = [];
   return r[0] = e(t[0], n[0]), r[1] = e(t[1], n[1]), r[2] = e(t[2], n[2]), r;
 }, tr = (e) => e, nr = (e, t) => e * t / 255, rr = (e, t) => e > t ? t : e, or = (e, t) => e > t ? e : t, sr = (e, t) => 255 * (1 - (1 - e / 255) * (1 - t / 255)), cr = (e, t) => t < 128 ? 2 * e * t / 255 : 255 * (1 - 2 * (1 - e / 255) * (1 - t / 255)), fr = (e, t) => 255 * (1 - (1 - t / 255) / (e / 255)), ar = (e, t) => e === 255 ? 255 : (e = 255 * (t / 255) / (1 - e / 255), e > 255 ? 255 : e);
-T.normal = V(J(tr));
-T.multiply = V(J(nr));
-T.screen = V(J(sr));
-T.overlay = V(J(cr));
-T.darken = V(J(rr));
-T.lighten = V(J(or));
-T.dodge = V(J(ar));
-T.burn = V(J(fr));
+q.normal = V(J(tr));
+q.multiply = V(J(nr));
+q.screen = V(J(sr));
+q.overlay = V(J(cr));
+q.darken = V(J(rr));
+q.lighten = V(J(or));
+q.dodge = V(J(ar));
+q.burn = V(J(fr));
 const { pow: lr, sin: ir, cos: ur } = Math;
 function br(e = 300, t = -1.5, n = 1, r = 1, o = [0, 1]) {
   let s = 0, c;
   R(o) === "array" ? c = o[1] - o[0] : (c = 0, o = [o, o]);
   const f = function(a) {
-    const i = H * ((e + 120) / 360 + t * a), b = lr(o[0] + c * a, r), h = (s !== 0 ? n[0] + a * s : n) * b * (1 - b) / 2, g = ur(i), _ = ir(i), C = b + h * (-0.14861 * g + 1.78277 * _), y = b + h * (-0.29227 * g - 0.90649 * _), m = b + h * (1.97294 * g);
-    return E(Ye([C * 255, y * 255, m * 255, 1]));
+    const i = H * ((e + 120) / 360 + t * a), b = lr(o[0] + c * a, r), h = (s !== 0 ? n[0] + a * s : n) * b * (1 - b) / 2, g = ur(i), y = ir(i), C = b + h * (-0.14861 * g + 1.78277 * y), w = b + h * (-0.29227 * g - 0.90649 * y), m = b + h * (1.97294 * g);
+    return E(Ye([C * 255, w * 255, m * 255, 1]));
   };
   return f.start = function(a) {
     return a == null ? e : (e = a, f);
@@ -1230,8 +1230,8 @@ function Mt(e, t = "equal", n = 7) {
     const a = s.length, i = new Array(a), b = new Array(n);
     let d = !0, h = 0, g = null;
     g = [], g.push(r);
-    for (let y = 1; y < n; y++)
-      g.push(r + y / n * (o - r));
+    for (let w = 1; w < n; w++)
+      g.push(r + w / n * (o - r));
     for (g.push(o); d; ) {
       for (let m = 0; m < n; m++)
         b[m] = 0;
@@ -1243,32 +1243,32 @@ function Mt(e, t = "equal", n = 7) {
           x < P && (P = x, j = $), b[j]++, i[m] = j;
         }
       }
-      const y = new Array(n);
+      const w = new Array(n);
       for (let m = 0; m < n; m++)
-        y[m] = null;
+        w[m] = null;
       for (let m = 0; m < a; m++)
-        f = i[m], y[f] === null ? y[f] = s[m] : y[f] += s[m];
+        f = i[m], w[f] === null ? w[f] = s[m] : w[f] += s[m];
       for (let m = 0; m < n; m++)
-        y[m] *= 1 / b[m];
+        w[m] *= 1 / b[m];
       d = !1;
       for (let m = 0; m < n; m++)
-        if (y[m] !== g[m]) {
+        if (w[m] !== g[m]) {
           d = !0;
           break;
         }
-      g = y, h++, h > 200 && (d = !1);
+      g = w, h++, h > 200 && (d = !1);
     }
-    const _ = {};
-    for (let y = 0; y < n; y++)
-      _[y] = [];
-    for (let y = 0; y < a; y++)
-      f = i[y], _[f].push(s[y]);
+    const y = {};
+    for (let w = 0; w < n; w++)
+      y[w] = [];
+    for (let w = 0; w < a; w++)
+      f = i[w], y[f].push(s[w]);
     let C = [];
-    for (let y = 0; y < n; y++)
-      C.push(_[y][0]), C.push(_[y][_[y].length - 1]);
-    C = C.sort((y, m) => y - m), c.push(C[0]);
-    for (let y = 1; y < C.length; y += 2) {
-      const m = C[y];
+    for (let w = 0; w < n; w++)
+      C.push(y[w][0]), C.push(y[w][y[w].length - 1]);
+    C = C.sort((w, m) => w - m), c.push(C[0]);
+    for (let w = 1; w < C.length; w += 2) {
+      const m = C[w];
       !isNaN(m) && c.indexOf(m) === -1 && c.push(m);
     }
   }
@@ -1308,13 +1308,13 @@ function Nr(e, t, n = 1, r = 1, o = 1) {
     return 2 * st * Ae / 360;
   };
   e = new u(e), t = new u(t);
-  const [f, a, i] = Array.from(e.lab()), [b, d, h] = Array.from(t.lab()), g = (f + b) / 2, _ = F(O(a, 2) + O(i, 2)), C = F(O(d, 2) + O(h, 2)), y = (_ + C) / 2, m = 0.5 * (1 - F(O(y, 7) / (O(y, 7) + O(25, 7)))), S = a * (1 + m), P = d * (1 + m), j = F(O(S, 2) + O(i, 2)), $ = F(O(P, 2) + O(h, 2)), x = (j + $) / 2, l = s(nt(i, S)), p = s(nt(h, P)), k = l >= 0 ? l : l + 360, w = p >= 0 ? p : p + 360, L = rt(k - w) > 180 ? (k + w + 360) / 2 : (k + w) / 2, N = 1 - 0.17 * pe(c(L - 30)) + 0.24 * pe(c(2 * L)) + 0.32 * pe(c(3 * L + 6)) - 0.2 * pe(c(4 * L - 63));
-  let v = w - k;
-  v = rt(v) <= 180 ? v : w <= k ? v + 360 : v - 360, v = 2 * F(j * $) * ot(c(v) / 2);
-  const Z = b - f, le = $ - j, ue = 1 + 0.015 * O(g - 50, 2) / F(20 + O(g - 50, 2)), be = 1 + 0.045 * x, He = 1 + 0.015 * x * N, Yt = 30 * Lr(-O((L - 275) / 25, 2)), Xt = -(2 * F(O(x, 7) / (O(x, 7) + O(25, 7)))) * ot(2 * c(Yt)), qt = F(
+  const [f, a, i] = Array.from(e.lab()), [b, d, h] = Array.from(t.lab()), g = (f + b) / 2, y = F(O(a, 2) + O(i, 2)), C = F(O(d, 2) + O(h, 2)), w = (y + C) / 2, m = 0.5 * (1 - F(O(w, 7) / (O(w, 7) + O(25, 7)))), S = a * (1 + m), P = d * (1 + m), j = F(O(S, 2) + O(i, 2)), $ = F(O(P, 2) + O(h, 2)), x = (j + $) / 2, l = s(nt(i, S)), p = s(nt(h, P)), _ = l >= 0 ? l : l + 360, k = p >= 0 ? p : p + 360, L = rt(_ - k) > 180 ? (_ + k + 360) / 2 : (_ + k) / 2, N = 1 - 0.17 * pe(c(L - 30)) + 0.24 * pe(c(2 * L)) + 0.32 * pe(c(3 * L + 6)) - 0.2 * pe(c(4 * L - 63));
+  let v = k - _;
+  v = rt(v) <= 180 ? v : k <= _ ? v + 360 : v - 360, v = 2 * F(j * $) * ot(c(v) / 2);
+  const Z = b - f, le = $ - j, ue = 1 + 0.015 * O(g - 50, 2) / F(20 + O(g - 50, 2)), be = 1 + 0.045 * x, He = 1 + 0.015 * x * N, Yt = 30 * Lr(-O((L - 275) / 25, 2)), Xt = -(2 * F(O(x, 7) / (O(x, 7) + O(25, 7)))) * ot(2 * c(Yt)), Tt = F(
     O(Z / (n * ue), 2) + O(le / (r * be), 2) + O(v / (o * He), 2) + Xt * (le / (r * be)) * (v / (o * He))
   );
-  return xr(0, $r(100, qt));
+  return xr(0, $r(100, Tt));
 }
 function Er(e, t, n = "lab") {
   e = new u(e), t = new u(t);
@@ -1450,7 +1450,7 @@ const Or = (...e) => {
   if (n.substr(0, 3) === "lab") {
     const r = ie();
     D("d50");
-    const o = Br(qe(t), n);
+    const o = Br(Te(t), n);
     return D(r), o;
   }
   if (n.substr(0, 3) === "lch") {
@@ -1464,24 +1464,24 @@ const Or = (...e) => {
   e = M(e, "lch");
   const [t, n, r, ...o] = e, [s, c, f] = gt(t, n, r), [a, i, b] = Ie(s, c, f);
   return [a, i, b, ...o.length > 0 && o[0] < 1 ? [o[0]] : []];
-}, U = /((?:-?\d+)|(?:-?\d+(?:\.\d+)?)%|none)/.source, q = /((?:-?(?:\d+(?:\.\d*)?|\.\d+)%?)|none)/.source, we = /((?:-?(?:\d+(?:\.\d*)?|\.\d+)%)|none)/.source, X = /\s*/.source, fe = /\s+/.source, We = /\s*,\s*/.source, _e = /((?:-?(?:\d+(?:\.\d*)?|\.\d+)(?:deg)?)|none)/.source, ae = /\s*(?:\/\s*((?:[01]|[01]?\.\d+)|\d+(?:\.\d+)?%))?/.source, Nt = new RegExp(
+}, U = /((?:-?\d+)|(?:-?\d+(?:\.\d+)?)%|none)/.source, T = /((?:-?(?:\d+(?:\.\d*)?|\.\d+)%?)|none)/.source, we = /((?:-?(?:\d+(?:\.\d*)?|\.\d+)%)|none)/.source, X = /\s*/.source, fe = /\s+/.source, We = /\s*,\s*/.source, _e = /((?:-?(?:\d+(?:\.\d*)?|\.\d+)(?:deg)?)|none)/.source, ae = /\s*(?:\/\s*((?:[01]|[01]?\.\d+)|\d+(?:\.\d+)?%))?/.source, Nt = new RegExp(
   "^rgba?\\(" + X + [U, U, U].join(fe) + ae + "\\)$"
 ), Et = new RegExp(
   "^rgb\\(" + X + [U, U, U].join(We) + X + "\\)$"
 ), Rt = new RegExp(
-  "^rgba\\(" + X + [U, U, U, q].join(We) + X + "\\)$"
+  "^rgba\\(" + X + [U, U, U, T].join(We) + X + "\\)$"
 ), Ct = new RegExp(
   "^hsla?\\(" + X + [_e, we, we].join(fe) + ae + "\\)$"
 ), vt = new RegExp(
   "^hsl?\\(" + X + [_e, we, we].join(We) + X + "\\)$"
 ), jt = /^hsla\(\s*(-?\d+(?:\.\d+)?),\s*(-?\d+(?:\.\d+)?)%\s*,\s*(-?\d+(?:\.\d+)?)%\s*,\s*([01]|[01]?\.\d+)\)$/, Pt = new RegExp(
-  "^lab\\(" + X + [q, q, q].join(fe) + ae + "\\)$"
+  "^lab\\(" + X + [T, T, T].join(fe) + ae + "\\)$"
 ), St = new RegExp(
-  "^lch\\(" + X + [q, q, _e].join(fe) + ae + "\\)$"
+  "^lch\\(" + X + [T, T, _e].join(fe) + ae + "\\)$"
 ), Ot = new RegExp(
-  "^oklab\\(" + X + [q, q, q].join(fe) + ae + "\\)$"
+  "^oklab\\(" + X + [T, T, T].join(fe) + ae + "\\)$"
 ), Bt = new RegExp(
-  "^oklch\\(" + X + [q, q, _e].join(fe) + ae + "\\)$"
+  "^oklch\\(" + X + [T, T, _e].join(fe) + ae + "\\)$"
 ), { round: Gt } = Math, ne = (e) => e.map((t, n) => n <= 2 ? Q(Gt(t), 0, 255) : t), B = (e, t = 0, n = 100, r = !1) => (typeof e == "string" && e.endsWith("%") && (e = parseFloat(e.substring(0, e.length - 1)) / 100, r ? e = t + (e + 1) * 0.5 * (n - t) : e = t + e * (n - t)), +e), z = (e, t) => e === "none" ? t : e, Fe = (e) => {
   if (e = e.toLowerCase().trim(), e === "transparent")
     return [0, 0, 0, 0];
@@ -1534,7 +1534,7 @@ const Or = (...e) => {
     n[0] = B(n[0], 0, 100), n[1] = B(z(n[1], 0), 0, 150, !1), n[2] = +z(n[2].replace("deg", ""), 0);
     const r = ie();
     D("d50");
-    const o = ne(Te(n));
+    const o = ne(qe(n));
     D(r);
     const s = t[4] !== void 0 ? +B(t[4], 0, 1) : 1;
     return o[3] = s, o;
@@ -1560,8 +1560,8 @@ Fe.test = (e) => (
 u.prototype.css = function(e) {
   return Xr(this._rgb, e);
 };
-const qr = (...e) => new u(...e, "css");
-E.css = qr;
+const Tr = (...e) => new u(...e, "css");
+E.css = Tr;
 A.format.css = Fe;
 A.autodetect.push({
   p: 5,
@@ -1574,8 +1574,8 @@ A.format.gl = (...e) => {
   const t = M(e, "rgba");
   return t[0] *= 255, t[1] *= 255, t[2] *= 255, t;
 };
-const Tr = (...e) => new u(...e, "gl");
-E.gl = Tr;
+const qr = (...e) => new u(...e, "gl");
+E.gl = qr;
 u.prototype.gl = function() {
   const e = this._rgb;
   return [e[0] / 255, e[1] / 255, e[2] / 255, e[3]];
@@ -1632,7 +1632,7 @@ Object.assign(E, {
   analyze: At,
   average: Fn,
   bezier: Qn,
-  blend: T,
+  blend: q,
   brewer: vr,
   Color: u,
   colors: re,
@@ -1704,15 +1704,15 @@ const at = 42, Fr = [
     colorMode: d,
     colorGamma: h,
     colorCorrectLightness: g,
-    colorPadding: _,
+    colorPadding: y,
     colorClass: C,
-    centeredEdgeLabels: y
+    centeredEdgeLabels: w
   } = e;
-  t = K(t), n = K(n), r = K(r, !0), o = K(o, !0), _ = K(_, !0), s = K(s), c = K(c), f = K(f), b = K(b), g = K(g), n === !0 && (Array.isArray(r) ? n = [...r] : Array.isArray(o) && (n = [...o])), c ^ s && (Array.isArray(r) && (r = r.reverse().map((l) => 1 - l)), Array.isArray(o) && (o = o.reverse().map((l) => 1 - l)));
+  t = K(t), n = K(n), r = K(r, !0), o = K(o, !0), y = K(y, !0), s = K(s), c = K(c), f = K(f), b = K(b), g = K(g), n === !0 && (Array.isArray(r) ? n = [...r] : Array.isArray(o) && (n = [...o])), c ^ s && (Array.isArray(r) && (r = r.reverse().map((l) => 1 - l)), Array.isArray(o) && (o = o.reverse().map((l) => 1 - l)));
   let m = null, S = null, P = null, j = null;
   o === !0 && (r ? o = Array.isArray(r) ? r : r - 1 : Array.isArray(n) ? o = n == null ? void 0 : n.length : Array.isArray(t) && (o = t == null ? void 0 : t.length));
   let $;
-  if (t === !0 ? $ = E.scale(Fr).domain(Hr) : t === void 0 ? t = ["#fff", "#000"] : Array.isArray(t) || (t = E.brewer[t] || ["#fff", t]), t !== !0 && c ^ s && (t = [...t].reverse()), $ = $ || E.scale(t), d && ($ = $.mode(d)), h && ($ = $.gamma(h)), g && ($ = $.correctLightness()), _ && ($ = $.padding(_)), o)
+  if (t === !0 ? $ = E.scale(Fr).domain(Hr) : t === void 0 ? t = ["#fff", "#000"] : Array.isArray(t) || (t = E.brewer[t] || ["#fff", t]), t !== !0 && c ^ s && (t = [...t].reverse()), $ = $ || E.scale(t), d && ($ = $.mode(d)), h && ($ = $.gamma(h)), g && ($ = $.correctLightness()), y && ($ = $.padding(y)), o)
     switch (C) {
       case "average":
         $ = $.domain([0, 1]);
@@ -1730,9 +1730,9 @@ const at = 42, Fr = [
     let l = Pe(o, 1);
     if (Array.isArray(l)) {
       let p = l.length - 1;
-      S = l.reduce((k, w, L, N) => {
-        let v = N[L + 1], Z = (w + v) / 2;
-        return L < p && L && k.push(Se($, w, Z, b)), L < p - 1 && k.push(Se($, v, Z, b)), k;
+      S = l.reduce((_, k, L, N) => {
+        let v = N[L + 1], Z = (k + v) / 2;
+        return L < p && L && _.push(Se($, k, Z, b)), L < p - 1 && _.push(Se($, v, Z, b)), _;
       }, []), m = l;
     }
   }
@@ -1746,23 +1746,23 @@ const at = 42, Fr = [
       if (m) {
         let p = m.length - (o ? 1 : 0);
         n = Array(p).fill(Math.max(p - 1, 1)).map(
-          (k, w) => `${parseFloat((w / k).toFixed(2))}`
+          (_, k) => `${parseFloat((k / _).toFixed(2))}`
         );
       } else n = ["0", "1"];
     Array.isArray(n) || (n = ["0", n]), c ^ s && Array.isArray(n) && (n = n.reverse());
     let l;
     switch (m && n.length - m.length) {
       case 0:
-        l = (p) => m[p], y = !1;
+        l = (p) => m[p], w = !1;
         break;
       case -1:
-        l = (p) => (m[p] + m[p + 1]) / 2, y = !0;
+        l = (p) => (m[p] + m[p + 1]) / 2, w = !0;
         break;
       default:
-        n.length > 1 ? (l = (p) => p / (n.length - 1), y = !1) : (l = () => 0.5, y = !0);
+        n.length > 1 ? (l = (p) => p / (n.length - 1), w = !1) : (l = () => 0.5, w = !0);
         break;
     }
-    j = n.map((p, k) => [ze(s ? 1 - l(k) : l(k)), p]);
+    j = n.map((p, _) => [ze(s ? 1 - l(_) : l(_)), p]);
   }
   return {
     stops$: S,
@@ -1771,11 +1771,11 @@ const at = 42, Fr = [
     before: a,
     after: i,
     vertical: s,
-    klass: `dv-sb${a ? " b" : ""}${i ? " a" : ""}${f ? " f" : ""}${s ? " v" : " h"}${y ? " c" : ""}`
+    klass: `dv-sb${a ? " b" : ""}${i ? " a" : ""}${f ? " f" : ""}${s ? " v" : " h"}${w ? " c" : ""}`
   };
 };
 let Ur = 0;
-const Vr = Tt({
+const Vr = qt({
   props: {
     colors: { type: [Boolean, String, Array] },
     labels: { type: [Boolean, String, Array] },
@@ -1806,6 +1806,7 @@ const Vr = Tt({
         vertical: f,
         klass: a
       } = Dr(e);
+      let i = f ? 1 : 0, b = f ? 0 : 1, d = f ? "translate(-1,1) rotate(-90)" : "", h = f ? "100%" : 0, g = f ? 0 : "100%";
       return I("svg", {
         class: a
       }, [
@@ -1814,39 +1815,39 @@ const Vr = Tt({
             id: `tk${t}`,
             x1: 0,
             xy: 0,
-            x2: f ? 1 : 0,
-            y2: f ? 0 : 1
+            x2: i,
+            y2: b
           }),
           I(
             "linearGradient",
             {
               id: `lg${t}`,
-              gradientTransform: f ? "translate(-1,1) rotate(-90)" : null
+              gradientTransform: d
             },
             n == null ? void 0 : n.map(
-              (i) => I("stop", { offset: i[0], "stop-color": i[1] })
+              (y) => I("stop", { offset: y[0], "stop-color": y[1] })
             )
           )
         ]),
         s ? I("rect", { class: "b", fill: s }) : null,
         I("rect", {
           fill: `url('#lg${t}')`,
-          width: f ? null : "100%",
-          height: f ? "100%" : null
+          width: h,
+          height: g
         }),
-        c ? I("rect", { class: "a", fill: c }) : null,
+        c ? I("rect", { class: "a", fill: c, y: h, x: g }) : null,
         r == null ? void 0 : r.map(
-          (i) => I("use", {
+          (y) => I("use", {
             href: `#tk${t}`,
-            x: f ? 0 : i,
-            y: f ? i : 0
+            x: f ? 0 : y,
+            y: f ? y : 0
           })
         ),
         o == null ? void 0 : o.map(
-          (i) => I("text", {
-            x: f ? null : i[0],
-            y: f ? i[0] : null
-          }, i[1])
+          (y) => I("text", {
+            x: f ? null : y[0],
+            y: f ? y[0] : null
+          }, y[1])
         )
       ]);
     };
@@ -1856,7 +1857,7 @@ const Vr = Tt({
   for (const [r, o] of t)
     n[r] = o;
   return n;
-}, t0 = /* @__PURE__ */ Jr(Vr, [["__scopeId", "data-v-fada05ef"]]);
+}, t0 = /* @__PURE__ */ Jr(Vr, [["__scopeId", "data-v-f4af1ba2"]]);
 export {
   t0 as default
 };
