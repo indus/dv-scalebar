@@ -43,7 +43,7 @@ const Ct = (i) => new Ht(typeof i == "string" ? i : i + "", void 0, Pt), Mt = (i
  * Copyright 2017 Google LLC
  * SPDX-License-Identifier: BSD-3-Clause
  */
-const { is: Rt, defineProperty: Lt, getOwnPropertyDescriptor: Dt, getOwnPropertyNames: jt, getOwnPropertySymbols: It, getPrototypeOf: Yt } = Object, C = globalThis, yt = C.trustedTypes, Bt = yt ? yt.emptyScript : "", et = C.reactiveElementPolyfillSupport, D = (i, t) => i, J = { toAttribute(i, t) {
+const { is: Rt, defineProperty: Lt, getOwnPropertyDescriptor: Dt, getOwnPropertyNames: jt, getOwnPropertySymbols: It, getPrototypeOf: Yt } = Object, C = globalThis, mt = C.trustedTypes, Bt = mt ? mt.emptyScript : "", et = C.reactiveElementPolyfillSupport, D = (i, t) => i, J = { toAttribute(i, t) {
   switch (t) {
     case Boolean:
       i = i ? Bt : null;
@@ -71,7 +71,7 @@ const { is: Rt, defineProperty: Lt, getOwnPropertyDescriptor: Dt, getOwnProperty
       }
   }
   return e;
-} }, ct = (i, t) => !Rt(i, t), gt = { attribute: !0, type: String, converter: J, reflect: !1, hasChanged: ct };
+} }, ct = (i, t) => !Rt(i, t), yt = { attribute: !0, type: String, converter: J, reflect: !1, hasChanged: ct };
 Symbol.metadata ?? (Symbol.metadata = Symbol("metadata")), C.litPropertyMetadata ?? (C.litPropertyMetadata = /* @__PURE__ */ new WeakMap());
 let O = class extends HTMLElement {
   static addInitializer(t) {
@@ -80,7 +80,7 @@ let O = class extends HTMLElement {
   static get observedAttributes() {
     return this.finalize(), this._$Eh && [...this._$Eh.keys()];
   }
-  static createProperty(t, e = gt) {
+  static createProperty(t, e = yt) {
     if (e.state && (e.attribute = !1), this._$Ei(), this.elementProperties.set(t, e), !e.noAccessor) {
       const s = Symbol(), r = this.getPropertyDescriptor(t, s, e);
       r !== void 0 && Lt(this.prototype, t, r);
@@ -100,7 +100,7 @@ let O = class extends HTMLElement {
     }, configurable: !0, enumerable: !0 };
   }
   static getPropertyOptions(t) {
-    return this.elementProperties.get(t) ?? gt;
+    return this.elementProperties.get(t) ?? yt;
   }
   static _$Ei() {
     if (this.hasOwnProperty(D("elementProperties"))) return;
@@ -277,20 +277,20 @@ O.elementStyles = [], O.shadowRootOptions = { mode: "open" }, O[D("elementProper
  * Copyright 2017 Google LLC
  * SPDX-License-Identifier: BSD-3-Clause
  */
-const j = globalThis, K = j.trustedTypes, mt = K ? K.createPolicy("lit-html", { createHTML: (i) => i }) : void 0, kt = "$lit$", P = `lit$${Math.random().toFixed(9).slice(2)}$`, Ut = "?" + P, Wt = `<${Ut}>`, T = document, Y = () => T.createComment(""), B = (i) => i === null || typeof i != "object" && typeof i != "function", ht = Array.isArray, Vt = (i) => ht(i) || typeof (i == null ? void 0 : i[Symbol.iterator]) == "function", st = `[ 	
-\f\r]`, R = /<(?:(!--|\/[^a-zA-Z])|(\/?[a-zA-Z][^>\s]*)|(\/?$))/g, _t = /-->/g, At = />/g, k = RegExp(`>|${st}(?:([^\\s"'>=/]+)(${st}*=${st}*(?:[^ 	
-\f\r"'\`<>=]|("|')|))|$)`, "g"), bt = /'/g, xt = /"/g, Tt = /^(?:script|style|textarea|title)$/i, Ot = (i) => (t, ...e) => ({ _$litType$: i, strings: t, values: e }), qt = Ot(1), L = Ot(2), z = Symbol.for("lit-noChange"), $ = Symbol.for("lit-nothing"), Et = /* @__PURE__ */ new WeakMap(), U = T.createTreeWalker(T, 129);
+const j = globalThis, K = j.trustedTypes, gt = K ? K.createPolicy("lit-html", { createHTML: (i) => i }) : void 0, kt = "$lit$", P = `lit$${Math.random().toFixed(9).slice(2)}$`, Ut = "?" + P, Wt = `<${Ut}>`, T = document, Y = () => T.createComment(""), B = (i) => i === null || typeof i != "object" && typeof i != "function", ht = Array.isArray, Vt = (i) => ht(i) || typeof (i == null ? void 0 : i[Symbol.iterator]) == "function", st = `[ 	
+\f\r]`, R = /<(?:(!--|\/[^a-zA-Z])|(\/?[a-zA-Z][^>\s]*)|(\/?$))/g, _t = /-->/g, bt = />/g, k = RegExp(`>|${st}(?:([^\\s"'>=/]+)(${st}*=${st}*(?:[^ 	
+\f\r"'\`<>=]|("|')|))|$)`, "g"), At = /'/g, xt = /"/g, Tt = /^(?:script|style|textarea|title)$/i, Ot = (i) => (t, ...e) => ({ _$litType$: i, strings: t, values: e }), qt = Ot(1), L = Ot(2), z = Symbol.for("lit-noChange"), $ = Symbol.for("lit-nothing"), Et = /* @__PURE__ */ new WeakMap(), U = T.createTreeWalker(T, 129);
 function zt(i, t) {
   if (!ht(i) || !i.hasOwnProperty("raw")) throw Error("invalid template strings array");
-  return mt !== void 0 ? mt.createHTML(t) : t;
+  return gt !== void 0 ? gt.createHTML(t) : t;
 }
 const Xt = (i, t) => {
   const e = i.length - 1, s = [];
   let r, o = t === 2 ? "<svg>" : t === 3 ? "<math>" : "", a = R;
   for (let l = 0; l < e; l++) {
     const n = i[l];
-    let h, p, c = -1, m = 0;
-    for (; m < n.length && (a.lastIndex = m, p = a.exec(n), p !== null); ) m = a.lastIndex, a === R ? p[1] === "!--" ? a = _t : p[1] !== void 0 ? a = At : p[2] !== void 0 ? (Tt.test(p[2]) && (r = RegExp("</" + p[2], "g")), a = k) : p[3] !== void 0 && (a = k) : a === k ? p[0] === ">" ? (a = r ?? R, c = -1) : p[1] === void 0 ? c = -2 : (c = a.lastIndex - p[2].length, h = p[1], a = p[3] === void 0 ? k : p[3] === '"' ? xt : bt) : a === xt || a === bt ? a = k : a === _t || a === At ? a = R : (a = k, r = void 0);
+    let h, d, c = -1, g = 0;
+    for (; g < n.length && (a.lastIndex = g, d = a.exec(n), d !== null); ) g = a.lastIndex, a === R ? d[1] === "!--" ? a = _t : d[1] !== void 0 ? a = bt : d[2] !== void 0 ? (Tt.test(d[2]) && (r = RegExp("</" + d[2], "g")), a = k) : d[3] !== void 0 && (a = k) : a === k ? d[0] === ">" ? (a = r ?? R, c = -1) : d[1] === void 0 ? c = -2 : (c = a.lastIndex - d[2].length, h = d[1], a = d[3] === void 0 ? k : d[3] === '"' ? xt : At) : a === xt || a === At ? a = k : a === _t || a === bt ? a = R : (a = k, r = void 0);
     const _ = a === k && i[l + 1].startsWith("/>") ? " " : "";
     o += a === R ? n + Wt : c >= 0 ? (s.push(h), n.slice(0, c) + kt + n.slice(c) + P + _) : n + P + (c === -2 ? l : _);
   }
@@ -301,7 +301,7 @@ class W {
     let r;
     this.parts = [];
     let o = 0, a = 0;
-    const l = t.length - 1, n = this.parts, [h, p] = Xt(t, e);
+    const l = t.length - 1, n = this.parts, [h, d] = Xt(t, e);
     if (this.el = W.createElement(h, s), U.currentNode = this.el.content, e === 2 || e === 3) {
       const c = this.el.content.firstChild;
       c.replaceWith(...c.childNodes);
@@ -309,15 +309,15 @@ class W {
     for (; (r = U.nextNode()) !== null && n.length < l; ) {
       if (r.nodeType === 1) {
         if (r.hasAttributes()) for (const c of r.getAttributeNames()) if (c.endsWith(kt)) {
-          const m = p[a++], _ = r.getAttribute(c).split(P), b = /([.?@])?(.*)/.exec(m);
-          n.push({ type: 1, index: o, name: b[2], strings: _, ctor: b[1] === "." ? Gt : b[1] === "?" ? Jt : b[1] === "@" ? Kt : Z }), r.removeAttribute(c);
+          const g = d[a++], _ = r.getAttribute(c).split(P), A = /([.?@])?(.*)/.exec(g);
+          n.push({ type: 1, index: o, name: A[2], strings: _, ctor: A[1] === "." ? Gt : A[1] === "?" ? Jt : A[1] === "@" ? Kt : Z }), r.removeAttribute(c);
         } else c.startsWith(P) && (n.push({ type: 6, index: o }), r.removeAttribute(c));
         if (Tt.test(r.tagName)) {
-          const c = r.textContent.split(P), m = c.length - 1;
-          if (m > 0) {
+          const c = r.textContent.split(P), g = c.length - 1;
+          if (g > 0) {
             r.textContent = K ? K.emptyScript : "";
-            for (let _ = 0; _ < m; _++) r.append(c[_], Y()), U.nextNode(), n.push({ type: 2, index: ++o });
-            r.append(c[m], Y());
+            for (let _ = 0; _ < g; _++) r.append(c[_], Y()), U.nextNode(), n.push({ type: 2, index: ++o });
+            r.append(c[g], Y());
           }
         }
       } else if (r.nodeType === 8) if (r.data === Ut) n.push({ type: 2, index: o });
@@ -579,7 +579,7 @@ const ee = { attribute: !0, type: String, converter: J, reflect: !1, hasChanged:
   }
   throw Error("Unsupported decorator location: " + s);
 };
-function g(i) {
+function y(i) {
   return (t, e) => typeof e == "object" ? se(i, t, e) : ((s, r, o) => {
     const a = r.hasOwnProperty(o);
     return r.constructor.createProperty(o, a ? { ...s, wrapped: !0 } : s), a ? Object.getOwnPropertyDescriptor(r, o) : void 0;
@@ -635,86 +635,86 @@ const wt = 42, re = [
     flip: l,
     before: n,
     after: h,
-    colorReverse: p,
+    colorReverse: d,
     colorMode: c,
-    colorGamma: m,
+    colorGamma: g,
     colorCorrectLightness: _,
-    colorPadding: b,
+    colorPadding: A,
     colorClass: x,
     centeredEdgeLabels: M
   } = i;
-  t = E(t), e = E(e), s = E(s, !0), r = E(r, !0), b = E(b, !0), o = E(o), a = E(a), l = E(l), p = E(p), _ = E(_), e === !0 && (Array.isArray(s) ? e = [...s] : Array.isArray(r) && (e = [...r])), a ^ o && (Array.isArray(s) && (s = s.reverse().map((f) => 1 - f)), Array.isArray(r) && (r = r.reverse().map((f) => 1 - f)));
-  let A = null, Q = null, q = null, dt = null;
+  t = E(t), e = E(e), s = E(s, !0), r = E(r, !0), A = E(A, !0), o = E(o), a = E(a), l = E(l), d = E(d), _ = E(_), e === !0 && (Array.isArray(s) ? e = [...s] : Array.isArray(r) && (e = [...r])), a ^ o && (Array.isArray(s) && (s = s.reverse().map((f) => 1 - f)), Array.isArray(r) && (r = r.reverse().map((f) => 1 - f)));
+  let b = null, Q = null, q = null, pt = null;
   r === !0 && (s ? r = Array.isArray(s) ? s : s - 1 : Array.isArray(e) ? r = e == null ? void 0 : e.length : Array.isArray(t) && (r = t == null ? void 0 : t.length));
-  let d;
-  if (t === !0 ? d = tt.scale(re).domain(ie) : t === void 0 ? t = ["#fff", "#000"] : Array.isArray(t) || (t = tt.brewer[t] || ["#fff", t]), t !== !0 && a ^ o && (t = [...t].reverse()), d = d || tt.scale(t), c && (d = d.mode(c)), m && (d = d.gamma(m)), _ && (d = d.correctLightness()), b && (d = d.padding(b)), r)
+  let p;
+  if (t === !0 ? p = tt.scale(re).domain(ie) : t === void 0 ? t = ["#fff", "#000"] : Array.isArray(t) || (t = tt.brewer[t] || ["#fff", t]), t !== !0 && a ^ o && (t = [...t].reverse()), p = p || tt.scale(t), c && (p = p.mode(c)), g && (p = p.gamma(g)), _ && (p = p.correctLightness()), A && (p = p.padding(A)), r)
     switch (x) {
       case "average":
-        d = d.domain([0, 1]);
+        p = p.domain([0, 1]);
         break;
       case "equal":
-        Array.isArray(r) || (r = ot(r, 1)), d = d.classes([0, ...r, 1]);
+        Array.isArray(r) || (r = ot(r, 1)), p = p.classes([0, ...r, 1]);
         break;
       default:
-        d = d.classes(r);
+        p = p.classes(r);
         break;
     }
-  if (n === "" && (n = d(o ? 1 : 0).hex()), h === "" && (h = d(o ? 0 : 1).hex()), !r || Number(r) <= 1)
-    Q = Array(wt).fill(wt - 1).map((f, v) => at(d, v / f, v / f, p));
+  if (n === "" && (n = p(o ? 1 : 0).hex()), h === "" && (h = p(o ? 0 : 1).hex()), !r || Number(r) <= 1)
+    Q = Array(wt).fill(wt - 1).map((f, v) => at(p, v / f, v / f, d));
   else {
     let f = ot(r, 1);
     if (Array.isArray(f)) {
       let v = f.length - 1;
       Q = f.reduce((S, X, F, Nt) => {
         let ft = Nt[F + 1], vt = (X + ft) / 2;
-        return F < v && F && S.push(at(d, X, vt, p)), F < v - 1 && S.push(at(d, ft, vt, p)), S;
-      }, []), A = f;
+        return F < v && F && S.push(at(p, X, vt, d)), F < v - 1 && S.push(at(p, ft, vt, d)), S;
+      }, []), b = f;
     }
   }
   if (s !== void 0) {
-    s === !0 && (Array.isArray(A) ? s = A : Array.isArray(e) ? s = e.length : s = 2);
+    s === !0 && (Array.isArray(b) ? s = b : Array.isArray(e) ? s = e.length : s = 2);
     let f = ot(s);
-    Array.isArray(f) && (q = f.map((v) => nt(v, o)), A = A || f, a ^ o && (q = q.reverse()));
+    Array.isArray(f) && (q = f.map((v) => nt(v, o)), b = b || f, a ^ o && (q = q.reverse()));
   }
   if (e !== void 0) {
     if (e === !0)
-      if (A) {
-        let v = A.length - (r ? 1 : 0);
+      if (b) {
+        let v = b.length - (r ? 1 : 0);
         e = Array(v).fill(Math.max(v - 1, 1)).map(
           (S, X) => `${parseFloat((X / S).toFixed(2))}`
         );
       } else e = ["0", "1"];
     Array.isArray(e) || (e = ["0", e]), a ^ o && Array.isArray(e) && (e = e.reverse());
     let f;
-    switch (A && e.length - A.length) {
+    switch (b && e.length - b.length) {
       case 0:
-        f = (v) => A[v], M = !1;
+        f = (v) => b[v], M = !1;
         break;
       case -1:
-        f = (v) => (A[v] + A[v + 1]) / 2, M = !0;
+        f = (v) => (b[v] + b[v + 1]) / 2, M = !0;
         break;
       default:
         e.length > 1 ? (f = (v) => v / (e.length - 1), M = !1) : (f = () => 0.5, M = !0);
         break;
     }
-    dt = e.map((v, S) => [nt(o ? 1 - f(S) : f(S)), v]);
+    pt = e.map((v, S) => [nt(o ? 1 - f(S) : f(S)), v]);
   }
   return {
     stops$: Q,
     ticks$: q,
-    labels$: dt,
+    labels$: pt,
     before: n,
     after: h,
     vertical: o,
     klass: `dv-sb${n ? " b" : ""}${h ? " a" : ""}${l ? " f" : ""}${o ? " v" : " h"}${M ? " c" : ""}`
   };
-}, ae = ".dv-sb{--s: var(--scalebar-size, 14);--f: var(--label-font, calc(var(--bz) * .9) monospace);--f0: var(--label-font0, var(--f));--f1: var(--label-font1, var(--f0));--sz: var(--container-size, calc(var(--s) * 2px));--bz: var(--bar-size, calc(var(--sz) / 2));--bo: var(--bar-offset);--tc: var(--tick-color, currentColor);--tc0: var(--tick-color0, var(--tc));--tc1: var(--tick-color1, var(--tc0));--tw: var(--tick-width, 2px);--tw0: var(--tick-width0, var(--tw));--tw1: var(--tick-width1, var(--tw0));--ts: var(--tick-size, var(--s));--ts0: var(--tick-size0, calc(var(--ts) * 1.7));--ts1: var(--tick-size1, var(--ts0));--to: var(--tick-offset, 0px);--to0: var(--tick-offset0, var(--to));--to1: var(--tick-offset1, var(--to0));--lc: var(--label-color, currentColor);--lc0: var(--label-color0, var(--lc));--lc1: var(--label-color1, var(--lc0));--lo: var(--label-offset, var(--bz));--lo0: var(--label-offset0, var(--lo));--lo1: var(--label-offset1, var(--lo0));--li: var(--label-indent, 0px);--li0: var(--label-indent0, var(--li));--li1: var(--label-indent1, calc(var(--li0) * -1));--_: calc(var(--sz) - var(--bz));--_to: calc((var(--to)*-1) + (var(--sz) - var(--ts)*1px));--_to0: calc((var(--to0)*-1) + (var(--sz) - var(--ts0)*1px));--_to1: calc((var(--to1)*-1) + (var(--_to0)))}svg{display:block;overflow:visible;width:100%;height:var(--sz)}svg rect{width:100%;height:var(--bz);transform:translateY(var(--bo))}svg rect.b{transform:translate(calc(var(--bz)*-1))}svg.f rect{transform:translateY(var(--bo, var(--_)))}svg.v{width:var(--sz);height:100%}svg.v rect{width:var(--bz);height:100%;transform:translate(var(--bo))}svg.v rect.b{transform:translateY(calc(var(--bz)*-1))}svg.f.v rect{transform:translate(var(--bo, var(--_)))}svg rect.b,svg rect.a{height:var(--bz);width:var(--bz)}svg use{stroke:var(--tc);stroke-width:var(--tw);transform:translateY(var(--to)) scaleY(var(--ts))}svg use:first-of-type{stroke:var(--tc0);stroke-width:var(--tw0)}svg use:last-of-type{stroke:var(--tc1);stroke-width:var(--tw1)}svg use:last-of-type{transform:translateY(var(--to1)) scaleY(var(--ts1))}svg use:first-of-type{transform:translateY(var(--to0)) scaleY(var(--ts0))}svg.f use{transform:translateY(var(--_to)) scaleY(var(--ts))}svg.f use:last-of-type{transform:translateY(var(--_to1)) scaleY(var(--ts1))}svg.f use:first-of-type{transform:translateY(var(--_to0)) scaleY(var(--ts0))}svg.v use{transform:translate(var(--to)) scaleX(var(--ts))}svg.v use:last-of-type{transform:translate(var(--to1)) scaleX(var(--ts1))}svg.v use:first-of-type{transform:translate(var(--to0)) scaleX(var(--ts0))}svg.v.f use{transform:translate(var(--_to)) scaleX(var(--ts))}svg.v.f use:last-of-type{transform:translate(var(--_to1)) scaleX(var(--ts1))}svg.v.f use:first-of-type{transform:translate(var(--_to0)) scaleX(var(--ts0))}svg text{fill:var(--lc);font:var(--f)}svg text:last-of-type{font:var(--f1);fill:var(--lc1)}svg text:first-of-type{font:var(--f0);fill:var(--lc0)}svg.h text{text-anchor:middle;dominant-baseline:text-before-edge;transform:translate(var(--li),var(--lo))}svg.h text:last-of-type{transform:translate(calc(var(--li1) - .3em),var(--lo1))}svg.h text:first-of-type{transform:translate(calc(var(--li0) + .3em),var(--lo0))}svg.h:not(.c) text:last-of-type{text-anchor:end}svg.h:not(.c) text:first-of-type{text-anchor:start}svg.h.f text{dominant-baseline:text-after-edge}svg.v text{text-anchor:start;dominant-baseline:central;transform:translate(calc(var(--lo) + .3em),var(--li))}svg.v text:last-of-type{transform:translate(calc(var(--lo) + .3em),calc(-1*var(--li1)))}svg.v text:first-of-type{transform:translate(calc(var(--lo) + .3em),calc(-1*var(--li0)))}svg.v:not(.c) text:last-of-type{dominant-baseline:text-before-edge}svg.v:not(.c) text:first-of-type{dominant-baseline:text-after-edge}svg.v:not(.c).f text:last-of-type{transform:translate(calc(var(--lo) - .3em),calc(-1*var(--li1)))}svg.v:not(.c).f text:first-of-type{transform:translate(calc(var(--lo) - .3em),calc(-1*var(--li0)))}svg.v.f text{text-anchor:end;transform:translate(calc(var(--lo) - .3em),var(--li))}";
-var ne = Object.defineProperty, le = Object.getOwnPropertyDescriptor, y = (i, t, e, s) => {
+}, ae = ".dv-sb{--s: var(--scalebar-size, 14);--f: var(--label-font, calc(var(--bz) * .9) monospace);--f0: var(--label-font0, var(--f));--f1: var(--label-font1, var(--f0));--sz: var(--container-size, calc(var(--s) * 2px));--bz: var(--bar-size, calc(var(--sz) / 2));--bo: var(--bar-offset);--tc: var(--tick-color, currentColor);--tc0: var(--tick-color0, var(--tc));--tc1: var(--tick-color1, var(--tc0));--tw: var(--tick-width, 2px);--tw0: var(--tick-width0, var(--tw));--tw1: var(--tick-width1, var(--tw0));--ts: var(--tick-size, var(--s));--ts0: var(--tick-size0, calc(var(--ts) * 1.7));--ts1: var(--tick-size1, var(--ts0));--to: var(--tick-offset, 0px);--to0: var(--tick-offset0, var(--to));--to1: var(--tick-offset1, var(--to0));--tb: var(--tick-blend, normal);--tb0: var(--tick-blend0, var(--tb));--tb1: var(--tick-blend1, var(--tb0));--lc: var(--label-color, currentColor);--lc0: var(--label-color0, var(--lc));--lc1: var(--label-color1, var(--lc0));--lo: var(--label-offset, var(--bz));--lo0: var(--label-offset0, var(--lo));--lo1: var(--label-offset1, var(--lo0));--li: var(--label-indent, 0px);--li0: var(--label-indent0, var(--li));--li1: var(--label-indent1, calc(var(--li0) * -1));--lb: var(--label-blend, normal);--lb0: var(--label-blend0, var(--lb));--lb1: var(--label-blend1, var(--lb0));--_: calc(var(--sz) - var(--bz));--_to: calc((var(--to)*-1) + (var(--sz) - var(--ts)*1px));--_to0: calc((var(--to0)*-1) + (var(--sz) - var(--ts0)*1px));--_to1: calc((var(--to1)*-1) + (var(--_to0)))}svg{display:block;overflow:visible;width:100%;height:var(--sz)}svg rect{width:100%;height:var(--bz);transform:translateY(var(--bo))}svg rect.b{transform:translate(calc(var(--bz)*-1))}svg.f rect{transform:translateY(var(--bo, var(--_)))}svg.v{width:var(--sz);height:100%}svg.v rect{width:var(--bz);height:100%;transform:translate(var(--bo))}svg.v rect.b{transform:translateY(calc(var(--bz)*-1))}svg.f.v rect{transform:translate(var(--bo, var(--_)))}svg rect.b,svg rect.a{height:var(--bz);width:var(--bz)}svg use{stroke:var(--tc);stroke-width:var(--tw);mix-blend-mode:var(--tb);transform:translateY(var(--to)) scaleY(var(--ts))}svg use:first-of-type{stroke:var(--tc0);stroke-width:var(--tw0);mix-blend-mode:var(--tb0)}svg use:last-of-type{stroke:var(--tc1);stroke-width:var(--tw1);mix-blend-mode:var(--tb1)}svg use:last-of-type{transform:translateY(var(--to1)) scaleY(var(--ts1))}svg use:first-of-type{transform:translateY(var(--to0)) scaleY(var(--ts0))}svg.f use{transform:translateY(var(--_to)) scaleY(var(--ts))}svg.f use:last-of-type{transform:translateY(var(--_to1)) scaleY(var(--ts1))}svg.f use:first-of-type{transform:translateY(var(--_to0)) scaleY(var(--ts0))}svg.v use{transform:translate(var(--to)) scaleX(var(--ts))}svg.v use:last-of-type{transform:translate(var(--to1)) scaleX(var(--ts1))}svg.v use:first-of-type{transform:translate(var(--to0)) scaleX(var(--ts0))}svg.v.f use{transform:translate(var(--_to)) scaleX(var(--ts))}svg.v.f use:last-of-type{transform:translate(var(--_to1)) scaleX(var(--ts1))}svg.v.f use:first-of-type{transform:translate(var(--_to0)) scaleX(var(--ts0))}svg text{font:var(--f);fill:var(--lc);mix-blend-mode:var(--lb)}svg text:last-of-type{font:var(--f1);fill:var(--lc1);mix-blend-mode:var(--lb1)}svg text:first-of-type{font:var(--f0);fill:var(--lc0);mix-blend-mode:var(--lb0)}svg.h text{text-anchor:middle;dominant-baseline:text-before-edge;transform:translate(var(--li),var(--lo))}svg.h text:last-of-type{transform:translate(calc(var(--li1) - .3em),var(--lo1))}svg.h text:first-of-type{transform:translate(calc(var(--li0) + .3em),var(--lo0))}svg.h:not(.c) text:last-of-type{text-anchor:end}svg.h:not(.c) text:first-of-type{text-anchor:start}svg.h.f text{dominant-baseline:text-after-edge}svg.v text{text-anchor:start;dominant-baseline:central;transform:translate(calc(var(--lo) + .3em),var(--li))}svg.v text:last-of-type{transform:translate(calc(var(--lo) + .3em),calc(-1*var(--li1)))}svg.v text:first-of-type{transform:translate(calc(var(--lo) + .3em),calc(-1*var(--li0)))}svg.v:not(.c) text:last-of-type{dominant-baseline:text-before-edge}svg.v:not(.c) text:first-of-type{dominant-baseline:text-after-edge}svg.v:not(.c).f text:last-of-type{transform:translate(calc(var(--lo) - .3em),calc(-1*var(--li1)))}svg.v:not(.c).f text:first-of-type{transform:translate(calc(var(--lo) - .3em),calc(-1*var(--li0)))}svg.v.f text{text-anchor:end;transform:translate(calc(var(--lo) - .3em),var(--li))}";
+var ne = Object.defineProperty, le = Object.getOwnPropertyDescriptor, m = (i, t, e, s) => {
   for (var r = s > 1 ? void 0 : s ? le(t, e) : t, o = i.length - 1, a; o >= 0; o--)
     (a = i[o]) && (r = (s ? a(t, e, r) : a(r)) || r);
   return s && r && ne(t, e, r), r;
 };
-const pt = { attribute: !0, reflect: !0 }, H = { type: Boolean, ...pt }, w = { type: String, ...pt }, ce = { type: Number, ...pt };
+const dt = { attribute: !0, reflect: !0 }, H = { type: Boolean, ...dt }, w = { type: String, ...dt }, ce = { type: Number, ...dt };
 let u = class extends I {
   render() {
     let {
@@ -725,25 +725,25 @@ let u = class extends I {
       after: r,
       vertical: o,
       klass: a
-    } = oe(this), l = o ? 1 : 0, n = o ? 0 : 1, h = o ? "translate(-1,1) rotate(-90)" : "", p = o ? "100%" : 0, c = o ? 0 : "100%", m = i == null ? void 0 : i.map(
+    } = oe(this), l = o ? 1 : 0, n = o ? 0 : 1, h = o ? "translate(-1,1) rotate(-90)" : "", d = o ? "100%" : 0, c = o ? 0 : "100%", g = i == null ? void 0 : i.map(
       (x) => L`<stop offset="${x[0]}" stop-color="${x[1]}"/>`
     ), _ = t == null ? void 0 : t.map(
       (x) => L`<use href="#tk" x="${o ? 0 : x}" y="${o ? x : 0}"/>`
-    ), b = e == null ? void 0 : e.map(
+    ), A = e == null ? void 0 : e.map(
       (x) => L`<text x="${o ? null : x[0]}" y="${o ? x[0] : null}">${x[1]}</text>`
     );
     return qt`<svg class="${a}">
 <defs>
   <line id="tk" x1="0" y1="0" x2="${l}" y2="${n}"/>
   <linearGradient id="lg" gradientTransform="${h}">
-  ${m}
+  ${g}
   </linearGradient>
 </defs>
 ${s ? L`<rect class="b" fill="${s}" />` : null}
-<rect fill="url('#lg')" width="${p}" height="${c}" />
-${r ? L`<rect class="a" fill="${r}" y="${p}" x="${c}"/>` : null}
+<rect fill="url('#lg')" width="${d}" height="${c}" />
+${r ? L`<rect class="a" fill="${r}" y="${d}" x="${c}"/>` : null}
 ${_}
-${b}
+${A}
 </svg>
     `;
   }
@@ -757,55 +757,55 @@ u.styles = Ct(`
   }
 
   ${ae}`);
-y([
-  g(w)
+m([
+  y(w)
 ], u.prototype, "colors", 2);
-y([
-  g(w)
+m([
+  y(w)
 ], u.prototype, "labels", 2);
-y([
-  g(w)
+m([
+  y(w)
 ], u.prototype, "ticks", 2);
-y([
-  g(w)
+m([
+  y(w)
 ], u.prototype, "classes", 2);
-y([
-  g(H)
+m([
+  y(H)
 ], u.prototype, "vertical", 2);
-y([
-  g(H)
+m([
+  y(H)
 ], u.prototype, "reverse", 2);
-y([
-  g(H)
+m([
+  y(H)
 ], u.prototype, "flip", 2);
-y([
-  g(w)
+m([
+  y(w)
 ], u.prototype, "before", 2);
-y([
-  g(w)
+m([
+  y(w)
 ], u.prototype, "after", 2);
-y([
-  g(H)
+m([
+  y(H)
 ], u.prototype, "colorReverse", 2);
-y([
-  g(w)
+m([
+  y(w)
 ], u.prototype, "colorMode", 2);
-y([
-  g(ce)
+m([
+  y(ce)
 ], u.prototype, "colorGamma", 2);
-y([
-  g(H)
+m([
+  y(H)
 ], u.prototype, "colorCorrectLightness", 2);
-y([
-  g(w)
+m([
+  y(w)
 ], u.prototype, "colorPadding", 2);
-y([
-  g(w)
+m([
+  y(w)
 ], u.prototype, "colorClass", 2);
-y([
-  g(H)
+m([
+  y(H)
 ], u.prototype, "centeredEdgeLabels", 2);
-u = y([
+u = m([
   te("dv-scalebar")
 ], u);
 export {

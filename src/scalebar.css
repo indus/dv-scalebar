@@ -24,6 +24,10 @@
     --to: var(--tick-offset, 0px);
     --to0: var(--tick-offset0, var(--to));
     --to1: var(--tick-offset1, var(--to0));
+    
+    --tb: var(--tick-blend, normal);
+    --tb0: var(--tick-blend0, var(--tb));
+    --tb1: var(--tick-blend1, var(--tb0));
 
     --lc: var(--label-color, currentColor);
     --lc0: var(--label-color0, var(--lc));
@@ -36,6 +40,10 @@
     --li: var(--label-indent, 0px);
     --li0: var(--label-indent0, var(--li));
     --li1: var(--label-indent1, calc(var(--li0) * -1));
+
+    --lb: var(--label-blend, normal);
+    --lb0: var(--label-blend0, var(--lb));
+    --lb1: var(--label-blend1, var(--lb0));
 
     --_: calc(var(--sz) - var(--bz));
     --_to: calc((var(--to)*-1) + (var(--sz) - var(--ts)*1px));
@@ -96,15 +104,18 @@ svg {
     use {
         stroke: var(--tc);
         stroke-width: var(--tw);
+        mix-blend-mode: var(--tb);
 
         &:first-of-type {
             stroke: var(--tc0);
             stroke-width: var(--tw0);
+            mix-blend-mode: var(--tb0);
         }
 
         &:last-of-type {
             stroke: var(--tc1);
             stroke-width: var(--tw1);
+            mix-blend-mode: var(--tb1);
         }
 
         transform: translateY(var(--to)) scaleY(var(--ts));
@@ -155,19 +166,21 @@ svg {
     }
 
     text {
-        fill: var(--lc);
         font: var(--f);
+        fill: var(--lc);
+        mix-blend-mode: var(--lb);
 
         &:last-of-type {
             font: var(--f1);
             fill: var(--lc1);
+            mix-blend-mode: var(--lb1);
         }
 
         &:first-of-type {
             font: var(--f0);
             fill: var(--lc0);
+            mix-blend-mode: var(--lb0);
         }
-
     }
 
     &.h {

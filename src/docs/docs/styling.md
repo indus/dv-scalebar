@@ -12,11 +12,13 @@ remain within the component’s container or apply suitable margins.
 |           `--container-size`            | Height of the scalebar container in horizontal layout; width in vertical layout |    **28px**<br> <small>[_`--scalebar-size`&nbsp;*&nbsp;2px_]</small>    |
 |              `--bar-size`               | Height of the colorbar in horizontal layout; width in vertical layout           |    **14px**<br> <small>[_`--container-size`&nbsp;/&nbsp;2_]</small>     |
 |             `--bar-offset`              | Offset applied to the labels                                                    |                                 **0px**                                 |
-|           `*` `--tick-color`            | Color of the ticks                                                              |                            **currentColor**                             |
+|           `*` `--tick-color`            | Color of the ticks                                                              |                            **currentColor**                             |  
+|           `*` `--tick-blend`            | Blend-mode of the ticks                                                              |                            **normal**                             |
 |           `*` `--tick-width`            | Width of the ticks                                                              |                                 **2px**                                 |
 |            `*` `--tick-size`            | Size of the ticks                                                               |            **14**<br> <small>[_`--container-size`_]</small>             |
 |           `*` `--tick-offset`           | Offset applied to the ticks                                                     |                                 **0px**                                 |
-|           `*` `--label-color`           | Color of the labels                                                             |                            **currentColor**                             |
+|           `*` `--label-color`           | Color of the labels                                                             |                             **currentColor**                             | 
+|           `*` `--label-blend`           | Blend-mode of the labels                                                             |                            **normal**                             |
 |          `*` `--label-offset`           | Offset applied to the labels                                                    |            **14px**<br> <small>[_`--barsize-size`_]</small>             |
 |          `*` `--label-indent`           | Indent applied to the labels                                                    |                                 **0px**                                 |
 |           `*` `--label-font`            | Font for labels in shorthand notation                                           | **12.6px monospace**<br><small>[_`--bar-size`&nbsp;*&nbsp;0.9_]</small> |
@@ -229,4 +231,199 @@ remain within the component’s container or apply suitable margins.
         --tick-offset0:0px;
         --label-offset:-14px;
     }
+```
+
+### _blend modes_
+
+<dv-scalebar class="tb tb_normal" colors="Viridis" ticks="5" labels="1,2,3,normal"/>
+<dv-scalebar class="tb tb_multiply" colors="Viridis" ticks="5" labels="1,2,3,multiply"/>
+<dv-scalebar class="tb tb_screen" colors="Viridis" ticks="5" labels="1,2,3,screen"/>
+<dv-scalebar class="tb tb_overlay" colors="Viridis" ticks="5" labels="1,2,3,overlay"/>
+<dv-scalebar class="tb tb_darken" colors="Viridis" ticks="5" labels="1,2,3,darken"/>
+<dv-scalebar class="tb tb_lighten" colors="Viridis" ticks="5" labels="1,2,3,lighten"/>
+<dv-scalebar class="tb tb_color-dodge" colors="Viridis" ticks="5" labels="1,2,3,color-dodge"/>
+<dv-scalebar class="tb tb_color-burn" colors="Viridis" ticks="5" labels="1,2,3,color-burn"/>
+<dv-scalebar class="tb tb_hard-light" colors="Viridis" ticks="5" labels="1,2,3,hard-light"/>
+<dv-scalebar class="tb tb_soft-light" colors="Viridis" ticks="5" labels="1,2,3,soft-light"/>
+<dv-scalebar class="tb tb_difference" colors="Viridis" ticks="5" labels="1,2,3,difference"/>
+<dv-scalebar class="tb tb_exclusion" colors="Viridis" ticks="5" labels="1,2,3,exclusion"/>
+<dv-scalebar class="tb tb_hue" colors="Viridis" ticks="5" labels="1,2,3,hue"/>
+<dv-scalebar class="tb tb_saturation" colors="Viridis" ticks="5" labels="1,2,3,saturation"/>
+<dv-scalebar class="tb tb_color" colors="Viridis" ticks="5" labels="1,2,3,color"/>
+<dv-scalebar class="tb tb_luminosity" colors="Viridis" ticks="5" labels="1,2,3,luminosity"/>
+<dv-scalebar class="tb tb_plus-darker" colors="Viridis" ticks="5" labels="1,2,3,plus-darker"/>
+<dv-scalebar class="tb tb_plus-lighter" colors="Viridis" ticks="5" labels="1,2,3,plus-lighter"/>
+
+<style>
+.tb {
+    --tick-color:DodgerBlue;
+    --tick-width:3px;
+    --tick-size0: 14;
+    --label-blend1:normal;
+    --label-offset:0px;
+    --label-color:DodgerBlue;
+    --label-color1:#000;
+    --label-font:800 12px "Inter", sans-serif;
+    --label-font1:500 12px "Inter", sans-serif
+}
+
+.tb_normal{
+    --tick-blend:normal;
+    --label-blend:normal;
+}
+.tb_multiply{
+    --tick-blend:multiply;
+    --label-blend:multiply;
+}
+.tb_screen{
+    --tick-blend:screen;
+    --label-blend:screen;
+}
+.tb_overlay{
+    --tick-blend:overlay;
+    --label-blend:overlay;
+}
+.tb_darken{
+    --tick-blend:darken;
+    --label-blend:darken;
+}
+.tb_lighten{
+    --tick-blend:lighten;
+    --label-blend:lighten;
+}
+.tb_color-dodge{
+    --tick-blend:color-dodge;
+    --label-blend:color-dodge;
+}
+.tb_color-burn{
+    --tick-blend:color-burn;
+    --label-blend:color-burn;
+}
+.tb_hard-light{
+    --tick-blend:hard-light;
+    --label-blend:hard-light;
+}
+.tb_soft-light{
+    --tick-blend:soft-light;
+    --label-blend:soft-light;
+}
+.tb_difference{
+    --tick-blend:difference;
+    --label-blend:difference;
+}
+.tb_exclusion{
+    --tick-blend:exclusion;
+    --label-blend:exclusion;
+}
+.tb_hue{
+    --tick-blend:hue;
+    --label-blend:hue;
+}
+.tb_saturation{
+    --tick-blend:saturation;
+    --label-blend:saturation;
+}
+.tb_color{
+    --tick-blend:color;
+    --label-blend:color;
+}
+.tb_luminosity{
+    --tick-blend:luminosity;
+    --label-blend:luminosity;
+}
+.tb_plus-darker{
+    --tick-blend:plus-darker;
+    --label-blend:plus-darker;
+}
+.tb_plus-lighter{
+    --tick-blend:plus-lighter;
+    --label-blend:plus-lighter;
+}
+</style>
+
+```CSS
+.tb {
+    --tick-color:DodgerBlue;
+    --tick-width:3px;
+    --tick-size0: 14;
+    --label-blend1:normal;
+    --label-offset:0px;
+    --label-color:DodgerBlue;
+    --label-color1:#000;
+    --label-font:800 12px "Inter", sans-serif;
+    --label-font1:500 12px "Inter", sans-serif
+}
+
+.tb_normal{
+    --tick-blend:normal;
+    --label-blend:normal;
+}
+.tb_multiply{
+    --tick-blend:multiply;
+    --label-blend:multiply;
+}
+.tb_screen{
+    --tick-blend:screen;
+    --label-blend:screen;
+}
+.tb_overlay{
+    --tick-blend:overlay;
+    --label-blend:overlay;
+}
+.tb_darken{
+    --tick-blend:darken;
+    --label-blend:darken;
+}
+.tb_lighten{
+    --tick-blend:lighten;
+    --label-blend:lighten;
+}
+.tb_color-dodge{
+    --tick-blend:color-dodge;
+    --label-blend:color-dodge;
+}
+.tb_color-burn{
+    --tick-blend:color-burn;
+    --label-blend:color-burn;
+}
+.tb_hard-light{
+    --tick-blend:hard-light;
+    --label-blend:hard-light;
+}
+.tb_soft-light{
+    --tick-blend:soft-light;
+    --label-blend:soft-light;
+}
+.tb_difference{
+    --tick-blend:difference;
+    --label-blend:difference;
+}
+.tb_exclusion{
+    --tick-blend:exclusion;
+    --label-blend:exclusion;
+}
+.tb_hue{
+    --tick-blend:hue;
+    --label-blend:hue;
+}
+.tb_saturation{
+    --tick-blend:saturation;
+    --label-blend:saturation;
+}
+.tb_color{
+    --tick-blend:color;
+    --label-blend:color;
+}
+.tb_luminosity{
+    --tick-blend:luminosity;
+    --label-blend:luminosity;
+}
+.tb_plus-darker{
+    --tick-blend:plus-darker;
+    --label-blend:plus-darker;
+}
+.tb_plus-lighter{
+    --tick-blend:plus-lighter;
+    --label-blend:plus-lighter;
+}
 ```
