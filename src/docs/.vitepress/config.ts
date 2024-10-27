@@ -66,7 +66,7 @@ export default defineConfig({
     },
     socialLinks: [
       { icon: "github", link: "https://github.com/indus/dv-scalebar" },
-      //{ icon: "npm", link: "https://www.npmjs.com/package/dv-scalebar" },
+      { icon: "npm", link: "https://www.npmjs.com/package/dv-scalebar" }
     ],
     footer: {
       message: 'Released under the <a href="https://github.com/indus/dv-scalebar/blob/main/LICENSE">BSD 3-Clause License</a>.',
