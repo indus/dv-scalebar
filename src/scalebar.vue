@@ -29,16 +29,22 @@ export default defineComponent({
 
     return () => {
 
-    const {
-      stops$,
-      ticks$,
-      labels$,
-      before,
-      after,
-      vertical,
-      klass
-    } = getProps(props)
-      
+      const {
+        stops$,
+        ticks$,
+        labels$,
+        before,
+        after,
+        vertical: v,
+        klass
+      } = getProps(props)
+
+      let x2 = v ? 1 : 0;
+      let y2 = v ? 0 : 1;
+      let gT = v ? "translate(-1,1) rotate(-90)" : "";
+      let width = v ? "100%" : 0;
+      let height = v ? 0 : "100%";
+
       return h("svg", {
         class: klass,
       }, [
@@ -47,16 +53,14 @@ export default defineComponent({
             id: `tk${uid}`,
             x1: 0,
             xy: 0,
-            x2: vertical ? 1 : 0,
-            y2: vertical ? 0 : 1,
+            x2: x2,
+            y2: y2,
           }),
           h(
             "linearGradient",
             {
               id: `lg${uid}`,
-              gradientTransform: vertical
-                ? "translate(-1,1) rotate(-90)"
-                : null,
+              gradientTransform: gT,
             },
             stops$?.map((s$) =>
               h("stop", { offset: s$[0], "stop-color": s$[1] })
@@ -66,21 +70,21 @@ export default defineComponent({
         before ? h("rect", { class: "b", fill: before }) : null,
         h("rect", {
           fill: `url('#lg${uid}')`,
-          width: vertical ? null : "100%",
-          height: vertical ? "100%" : null,
+          width,
+          height,
         }),
-        after ? h("rect", { class: "a", fill: after }) : null,
+        after ? h("rect", { class: "a", fill: after, y: width, x: height }) : null,
         ticks$?.map((t$) =>
           h("use", {
             href: `#tk${uid}`,
-            x: vertical ? 0 : t$,
-            y: vertical ? t$ : 0,
+            x: v ? 0 : t$,
+            y: v ? t$ : 0,
           })
         ),
         labels$?.map((l$) =>
           h("text", {
-            x: vertical ? null : l$[0],
-            y: vertical ? l$[0] : null,
+            x: v ? null : l$[0],
+            y: v ? l$[0] : null,
           }, l$[1])
         ),
       ]);

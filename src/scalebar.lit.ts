@@ -85,9 +85,9 @@ export class DVscalebar extends LitElement {
   ${stops}
   </linearGradient>
 </defs>
-${before ? svg`<rect class="b" fill="${before}"/>` : null}
+${before ? svg`<rect class="b" fill="${before}" />` : null}
 <rect fill="url('#lg')" width="${w}" height="${h}" />
-${after ? svg`<rect class="a" fill="${after}"/>` : null}
+${after ? svg`<rect class="a" fill="${after}" y="${w}" x="${h}"/>` : null}
 ${ticks}
 ${labels}
 </svg>
