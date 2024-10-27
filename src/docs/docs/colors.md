@@ -2,7 +2,7 @@
 
 The [`colors`](/docs/colors) attribute manages the coloring of the main bar. Its functionality is primarily based on [chroma.js](https://www.npmjs.com/package/chroma-js), so you may want to check their [documentation](https://gka.github.io/chroma.js/) as well.
 
-## No Value
+## No value
 
 The [`colors`](/docs/colors) attribute without a value returns the [turbo](https://research.google/blog/turbo-an-improved-rainbow-colormap-for-visualization/) colormap, which is not included in chroma.js.
 
@@ -13,7 +13,7 @@ The [`colors`](/docs/colors) attribute without a value returns the [turbo](https
 **Result**
 <dv-scalebar colors></dv-scalebar>
 
-## Single Value
+## Single value
 
 When a single value is provided in the [`colors`](/docs/colors) attribute, the scale interpolates between white and that color.
 
@@ -32,7 +32,7 @@ When a single value is provided in the [`colors`](/docs/colors) attribute, the s
 <dv-scalebar colors="rgb(70 70 250 / .5)"></dv-scalebar>
 <dv-scalebar colors="hsl(190 60% 50%)"></dv-scalebar>
 
-## Multiple Values
+## Multiple values
 
 To provide multiple colors, use a comma-separated list.
 

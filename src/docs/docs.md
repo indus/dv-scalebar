@@ -90,7 +90,7 @@ The use of multiple attributes in the above example can be simplified with `v-bi
 </template>
 ```
 
-... or even with a single reactive configuration object:
+... or even with a single reactive object that contains properties for multiple attributes:
 
 ``` Vue
 <script setup lang="ts">

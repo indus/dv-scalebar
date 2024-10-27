@@ -4,7 +4,7 @@ The [`ticks`](/docs/ticks) attribute adds ticks to the scalebar. You can either 
 
 If the [`labels`](/docs/labels) or [`classes`](/docs/classes) attributes are already present, and the number and positions of ticks match those, you can simply add an empty [`ticks`](/docs/ticks) attribute.
 
-## No Value
+## No value
 
 The [`ticks`](/docs/ticks) attribute without a value adds a tick at the minimum and maximum values.
 
@@ -15,7 +15,7 @@ The [`ticks`](/docs/ticks) attribute without a value adds a tick at the minimum 
 **Result**
 <dv-scalebar colors="pink,teal" ticks></dv-scalebar>
 
-## Single Value
+## Single value
 
 A single integer value for the [`ticks`](/docs/ticks) attribute adds that number of ticks to the scalebar.
 
@@ -32,7 +32,7 @@ A single integer value for the [`ticks`](/docs/ticks) attribute adds that number
 <dv-scalebar colors="pink,teal" ticks="4"></dv-scalebar>
 <dv-scalebar colors="pink,teal" ticks="15"></dv-scalebar>
 
-## Multiple Values
+## Multiple values
 
 Multiple values between 0 and 1 for the [`ticks`](/docs/ticks) attribute allow you to position them along the scalebar.
 
