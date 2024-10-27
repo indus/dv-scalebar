@@ -1,0 +1,6 @@
+Name: dv-scalebar
+Version: 0.1.0
+License: BSD-3-Clause
+Private: false
+Repository: git+https://github.com/indus/dv-scalebar
+Author: Stefan Keim (https://github.com/indus)
