@@ -42,3 +42,21 @@ Multiple values for the [`labels`](/docs/labels) attribute are spaced evenly, as
 <dv-scalebar colors="gold,teal" labels="min,max"></dv-scalebar>
 <dv-scalebar colors="gold,teal" labels="0,1,2"></dv-scalebar>
 <dv-scalebar colors="gold,teal" labels="zero,1,2,3"></dv-scalebar>
+
+## [ nicetix ]
+
+In real-world scenarios, you may encounter odd numbers for your minimum and maximum, making it challenging to find appealing labels in between.
+
+The [nicetix](https://nicetix.js.org/) function can help you with that task:
+
+```sh
+$ npm install nicetix
+```
+
+```JS
+import nicetix from "nicetix";
+// nicetix(min, max, <num = 5>)
+
+let ticks = nicetix(-1.23, 12.3, 5);
+// -> [-5, 0, 5, 10, 15]
+```
