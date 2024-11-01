@@ -1,7 +1,7 @@
 import tt from "chroma-js";
 /**
  * @license
- * https://github.com/indus/dist/blob/main/dv-scalebar.lit.nochroma.licence.txt
+ * https://raw.githubusercontent.com/indus/dv-scalebar/refs/heads/main/dist/dv-scalebar.lit.nochroma.licence.txt
  */
 /**
  * @license

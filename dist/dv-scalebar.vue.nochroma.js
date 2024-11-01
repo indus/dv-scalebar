@@ -2,7 +2,7 @@ import { defineComponent as O, h as p } from "vue";
 import L from "chroma-js";
 /**
  * @license
- * https://github.com/indus/dist/blob/main/dv-scalebar.vue.nochroma.licence.txt
+ * https://raw.githubusercontent.com/indus/dv-scalebar/refs/heads/main/dist/dv-scalebar.vue.nochroma.licence.txt
  */
 const G = 42, E = [
   "#30123b",

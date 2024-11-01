@@ -21,7 +21,7 @@ export const ruLicence = (id: String) => {
     sourcemap: true,
     banner: {
       content: `@license
-https://github.com/indus/dist/blob/main/${fileName}`,
+https://raw.githubusercontent.com/indus/dv-scalebar/refs/heads/main/dist/${fileName}`,
     },
     thirdParty: {
       output: `./dist/${fileName}`,

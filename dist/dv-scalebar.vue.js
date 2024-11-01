@@ -1,7 +1,7 @@
 import { defineComponent as qt, h as I } from "vue";
 /**
  * @license
- * https://github.com/indus/dist/blob/main/dv-scalebar.vue.licence.txt
+ * https://raw.githubusercontent.com/indus/dv-scalebar/refs/heads/main/dist/dv-scalebar.vue.licence.txt
  */
 const { min: Zt, max: It } = Math, Q = (e, t = 0, n = 1) => Zt(It(t, e), n), Ye = (e) => {
   e._clipped = !1, e._unclipped = e.slice(0);

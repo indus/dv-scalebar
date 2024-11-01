@@ -1,6 +1,6 @@
 /**
  * @license
- * https://github.com/indus/dist/blob/main/dv-scalebar.lit.licence.txt
+ * https://raw.githubusercontent.com/indus/dv-scalebar/refs/heads/main/dist/dv-scalebar.lit.licence.txt
  */
 /**
  * @license

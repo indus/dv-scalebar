@@ -1,6 +1,6 @@
 (function(R,et){typeof exports=="object"&&typeof module<"u"?et(exports):typeof define=="function"&&define.amd?define(["exports"],et):(R=typeof globalThis<"u"?globalThis:R||self,et(R.Scalebar={}))})(this,function(R){"use strict";/**
  * @license
- * https://github.com/indus/dist/blob/main/dv-scalebar.lit.licence.txt
+ * https://raw.githubusercontent.com/indus/dv-scalebar/refs/heads/main/dist/dv-scalebar.lit.licence.txt
  *//**
  * @license
  * Copyright 2019 Google LLC

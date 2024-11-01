@@ -1,6 +1,6 @@
 (function(h,k){typeof exports=="object"&&typeof module<"u"?k(exports,require("chroma-js")):typeof define=="function"&&define.amd?define(["exports","chroma-js"],k):(h=typeof globalThis<"u"?globalThis:h||self,k(h.Scalebar={},h.chroma))})(this,function(h,k){"use strict";/**
  * @license
- * https://github.com/indus/dist/blob/main/dv-scalebar.lit.nochroma.licence.txt
+ * https://raw.githubusercontent.com/indus/dv-scalebar/refs/heads/main/dist/dv-scalebar.lit.nochroma.licence.txt
  *//**
  * @license
  * Copyright 2019 Google LLC
