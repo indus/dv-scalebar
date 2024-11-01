@@ -5,6 +5,8 @@
 }
 
 .VPHome {
+    margin-bottom: 3em !important;
+
     .VPHero {
         .text {
             font-size: 26px;
@@ -55,26 +57,37 @@
     }
 
     .feature {
-        display: block;
-        border: 1px solid var(--vp-c-bg-soft);
-        border-radius: 12px;
-        height: 100%;
-        background-color: var(--vp-c-bg-soft);
-        transition: border-color 0.25s, background-color 0.25s;
-        padding: 3em 3em;
-        margin: 16px 0;
+
+        padding: 4em 1em 0em;
+    }
+
+    @media (min-width: 420px) {
+        .feature {
+            display: block;
+            border: 1px solid var(--vp-c-bg-soft);
+            border-radius: 12px;
+            height: 100%;
+            background-color: var(--vp-c-bg-soft);
+            transition: border-color 0.25s, background-color 0.25s;
+            padding: 3em 3em;
+            margin: 16px 0 0;
+
+
+            .row .row dv-scalebar,
+            .row .row .dv-sb {
+                min-height: 220px;
+            }
+        }
+    }
+
+    @media (min-width: 640px) {
 
         dv-scalebar,
         .dv-sb {
             --scalebar-size: 18;
-
-        }
-
-        .row .row dv-scalebar,
-        .row .row .dv-sb {
-            min-height: 300px;
         }
     }
+
 }
 
 img.fr {
